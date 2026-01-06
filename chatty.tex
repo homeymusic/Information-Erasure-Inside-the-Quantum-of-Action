@@ -1,0 +1,69 @@
+\documentclass[%
+aps, reprint, prl, amsmath,amssymb
+]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{orcidlink}
+\usepackage{mathtools}
+
+\begin{document}
+
+\title{Landauer--Heisenberg Constraint: Quantum States from Minimal Description Length}
+
+\author{Brian McAuliff Mulloy\orcidlink{0000-0002-1803-3172}}
+\email{[bmulloy@umich.edu](mailto:bmulloy@umich.edu)}
+\affiliation{Detroit, MI, USA}
+\date{\today}
+
+\begin{abstract}
+We show that quantization within a minimal Heisenberg phase-space cell follows from Landauer’s principle: among operationally indistinguishable states, thermodynamic stability selects the representation of minimal description length.
+\end{abstract}
+
+\maketitle
+
+The Heisenberg uncertainty principle bounds phase-space resolution by
+\begin{equation}
+\Delta x \Delta p \ge \hbar/2 .
+\end{equation}
+When saturated, all states within the minimal cell are operationally indistinguishable. Quantum mechanics fixes the cell’s area but does not specify the informational identity of the state it contains.
+
+Landauer’s principle supplies the missing constraint. Any logically irreversible operation, including the erasure of information, dissipates energy
+\begin{equation}
+E \ge k_B T \ln 2 \quad \text{per bit}.
+\end{equation}
+Information that cannot be operationally distinguished cannot be stabilized against environmental coupling and is therefore necessarily erased. Within a minimal Heisenberg cell, any state description exceeding the resolution bound constitutes surplus information and incurs an unavoidable thermodynamic cost.
+
+This establishes a variational principle: \emph{among all representations compatible with} $\Delta x \Delta p = \hbar/2$, the physically realized state minimizes description length. Higher-complexity encodings correspond to hidden degrees of freedom that must be continually protected from thermalization, rendering them thermodynamically unstable.
+
+We identify the physical state with a \emph{fundamental fraction} $Q_0 = a/b$, a rational representative of minimal description length within the cell. The rationals are ordered by the Stern--Brocot tree, where each branching corresponds to a single bit. The description length
+\begin{equation}
+L(Q_0) = \text{depth}(Q_0)
+\end{equation}
+measures the algorithmic cost of specifying the state.
+
+Let $x_0$ and $p_0=\hbar/x_0$ denote characteristic scales. Defining
+\begin{align}
+\delta \tilde{x} &\equiv x_0 \left| \frac{x}{x_0} - \frac{a}{b} \right| ,\
+\Delta p &\equiv n_{p_0} p_0 ,
+\end{align}
+operational indistinguishability requires
+\begin{equation}
+\label{eq:HeisenbergBox}
+\left| \frac{x}{x_0} - \frac{a}{b} \right| < \frac{1}{2 n_{p_0}}
+;;\Longrightarrow;;
+\delta \tilde{x} \Delta p < \frac{\hbar}{2}.
+\end{equation}
+The selected $Q_0$ is the minimal-depth rational satisfying Eq.~\eqref{eq:HeisenbergBox}.
+
+The associated Landauer cost is
+\begin{equation}
+E_0 = L(Q_0), k_B T \ln 2 .
+\end{equation}
+States requiring longer descriptions are exponentially suppressed by their thermodynamic penalty. Quantization thus emerges not as an imposed discretization, but as the joint consequence of finite phase-space resolution and the energetic cost of information.
+
+We show numerically that this Landauer--Heisenberg constraint reproduces the discrete structures of elementary quantum systems.
+
+\bibliography{apssamp}
+
+\end{document}

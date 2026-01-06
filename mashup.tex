@@ -1,0 +1,91 @@
+\documentclass[%
+ aps, reprint, prl, amsmath,amssymb
+]{revtex4-2}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{orcidlink}
+\usepackage{svg}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{argmin}
+\begin{document}
+
+\title{Landauer-Heisenberg Constraint: Elementary Quantum Structure from Fundamental Fractions}
+
+\author{Brian McAuliff Mulloy\orcidlink{0000-0002-1803-3172}}
+\email{bmulloy@umich.edu}
+\affiliation{Detroit, MI, USA}
+\date{\today}
+
+\begin{abstract}
+We show that phase space quantization emerges as a thermodynamic necessity by applying Landauer's principle to the minimal description length of states within the minimal Heisenberg cell.
+\end{abstract}
+
+\maketitle
+
+The physical limits of phase space are governed by the Heisenberg uncertainty principle, $\Delta x \Delta p \ge \hbar/2$. Within the saturated, minimal Heisenberg phase-space cell $\Delta x \Delta p = \hbar / 2$, all states are operationally indistinguishable [Fig.~\ref{fig:LandauerHeisenbergCell}]. 
+
+Landauer's principle establishes a fundamental lower bound on the energy required to process information: any logically irreversible manipulation of a bit, such as its erasure, must be accompanied by a heat dissipation of at least $E \ge k_B T \ln 2$.
+
+Landauer's principle establishes a fundamental lower bound on the energy required to process information: any logically irreversible manipulation of a bit, such as its erasure, must be accompanied by a heat dissipation of at least $E \ge k_B T \ln 2$.
+
+These two principles—Heisenberg's uncertainty and Landauer's bound—converge at a profound intersection. Within the minimal Heisenberg cell, the universe faces an informational dilemma: any attempt to specify a state with arbitrary precision requires encoding increasingly complex rational approximations, each demanding additional bits of description. Yet Landauer's principle imposes a thermodynamic tax on this precision: each bit costs energy to process, maintain, or erase.
+
+This naturally motivates a principle of thermodynamic parsimony. The second law of thermodynamics drives isolated systems toward maximum entropy—the macrostate with the most microstates. Equivalently, in the language of algorithmic information theory, physical systems prefer minimal description length (MDL) representations: nature "chooses" the encoding that minimizes algorithmic complexity (Rissanen, 1978; Grünwald, 2007). This preference emerges not from aesthetic simplicity, but from thermodynamic necessity. High-precision states carry surplus information—bits that contribute negligibly to distinguishability within the Heisenberg cell but impose real energetic costs. The Landauer energy $E_0 = L(Q_0) k_B T \ln 2$ penalizes informational redundancy: states with longer descriptions are thermodynamically disfavored.
+
+The minimum description length principle thus acts as nature's Occam's razor, enforced by the laws of thermodynamics. Just as equilibrium thermodynamics selects the maximum entropy distribution over phase space, the Landauer-Heisenberg constraint selects the minimum complexity representative within each quantum cell. The universe "prefers" MDL not by design, but because high-description-length states are exponentially suppressed by their thermodynamic cost.
+
+
+\section{Back to the Flow}
+
+We propose that states within the minimal Heisenberg cell are uniquely identified by a \textit{fundamental fraction} $Q_0 = a/b$. We identify $Q_0 \in \mathbb{Q}_0 \subset \mathbb{Q}$ as a canonically selected rational representative within the cell possessing the minimal description length. Formally, this corresponds to the minimal path length rational within the Stern--Brocot tree, which searches for rationals within the scaled approximation distance in phase space [Eq.~\eqref{eq:HeisenbergBox}].  Each branching step in the tree represents a binary choice, adding exactly one bit of information to the specification of the state. We define the description length $L(Q_{0})$ as the depth of the fraction within the tree; for a fraction $a/b$ with a bit-string representation of length $k$, $L(Q_{0})=k$. The Stern-Brocot tree generates the most balanced digital segments. This ensures that narrowing the search within a phase space cell follows the path of minimum description length while maintaining the most physically straight discretizations of the state's trajectory (Brlek et al., 2020, Berstel and de Luca, 1997, Andrea Frosini and Lama Tarsissi 2020).
+
+\begin{figure}[tbp]
+    \centering
+    \includesvg[width=0.62\linewidth]{LandauerHeisenbergCell}
+    \caption{\textbf{The Landauer--Heisenberg Phase-Space Cell.} Within the minimal cell $\Delta x \Delta p = \hbar/2$, all states are operationally indistinguishable. We identify the physical state with its \textit{fundamental frequency}, the minimal description length rational representative $a/b \in \mathbb{Q}_0 \subset \mathbb{Q}$ (solid dot), obtained as the minimal path length rational within the Stern--Brocot tree. The dashed line illustrates the thermodynamic reduction of high-precision surplus information (faint point) to the minimal description length state $a/b$.}
+    \label{fig:LandauerHeisenbergCell}
+\end{figure}
+
+ By identifying the physical state with the minimal description length rational, the system discards the non-physical surplus information, thereby minimizing the thermodynamic cost. Consequently, this two-fold Landauer-Heisenberg constraint suggests that quantization is not merely an empirical observation, but a thermodynamic necessity: the quantum of action and the cost of information act in tandem to bound the resolution of phase space to a finite, discrete set of fundamental fractions.
+
+The operational limit of the phase-space cell is defined by the Heisenberg equality $\Delta x \Delta p = \hbar/2$. Within this bound, we define the approximation error $\delta \tilde{x}$ and the momentum uncertainty $\Delta p$ relative to the system's characteristic scales:
+\begin{align}
+    \delta \tilde{x} &\coloneqq x_0 \left| \frac{x}{x_0} - \frac{a}{b} \right|, \\
+    \Delta p &\coloneqq n_{p_0} p_0 = n_{p_0} \frac{\hbar}{x_0},
+\end{align}
+where $x, x_0 \in \mathbb{R}$ represent the position and characteristic length, $p_0$ the characteristic momentum, and $n_{p_0} \in \mathbb{R}$ a dimensionless momentum uncertainty factor. 
+
+For the state to remain operationally indistinguishable from the fundamental fraction, it must satisfy $\delta \tilde{x} < \Delta x$, which implies the uncertainty constraint $\delta \tilde{x} \Delta p < \hbar/2$. This leads to our primary selection rule for the fundamental fraction $a/b \in \mathbb{Q}_0$:
+\begin{equation}
+\label{eq:HeisenbergBox}
+\left| \frac{x}{x_0} - \frac{a}{b} \right| < \frac{1}{2 n_{p_0}} \implies \delta \tilde{x} \Delta p < \frac{\hbar}{2}.
+\end{equation}
+
+The informational cost is quantified by the length function $L(Q_0)$, defined as the number of bits (left or right moves) required to reach $Q_0$ from the root of the tree:
+\begin{equation}
+L(Q_0) = \text{depth}(Q_0) \implies E_0 = L(Q_0) k_B T \ln 2.
+\end{equation}
+
+
+By satisfying Eq.~\eqref{eq:HeisenbergBox} using the minimal description length rational in the Stern--Brocot tree, the system identifies the fundamental fraction that minimizes the thermodynamic cost of information while remaining bounded by the quantum of action.
+
+ To resolve an irrational value, or even a high-precision rational, an observer or environment would require infinite or at least prohibitive informational description length, demanding a corresponding prohibitive thermodynamic energy to erase or maintain that information.
+
+Using $10^{8}$ computational data points, we will show that this fundamental fraction mapping—governed by the Landauer-Heisenberg constraint—recovers the emergent discrete structures of fundamental quantum systems. 
+
+\textbf{[Forthcoming: Numerical verification of the canonical elementary quantum systems to be inserted here.]}
+
+
+
+% The \nocite command causes all entries in a bibliography to be printed out
+% whether or not they are actually referenced in the text. This is appropriate
+% for the sample file to show the different styles of references, but authors
+% most likely will not want to use it.
+\nocite{*}
+
+\bibliography{apssamp}% Produces the bibliography via BibTeX.
+
+\end{document}

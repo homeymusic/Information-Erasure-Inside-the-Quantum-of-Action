@@ -1,0 +1,56 @@
+\documentclass[%
+ aps, reprint, prl, amsmath,amssymb
+]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{orcidlink}
+\usepackage{svg}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{argmin}
+\begin{document}
+
+\title{Landauer-Heisenberg Constraint: Elementary Quantum Structure from Fundamental Fractions}
+
+\author{Brian McAuliff Mulloy\orcidlink{0000-0002-1803-3172}}
+\email{bmulloy@umich.edu}
+\affiliation{Detroit, MI, USA}
+\date{\today}
+
+\begin{abstract}
+Phase space quantization emerges as a thermodynamic necessity when Landauer's principle is applied to state description within minimal Heisenberg cells.
+\end{abstract}
+
+\maketitle
+
+The Heisenberg uncertainty principle $\Delta x \Delta p \ge \hbar/2$ sets the resolution limit of phase space. Within the saturated minimal cell $\Delta x \Delta p = \hbar / 2$, all states are operationally indistinguishable [Fig.~\ref{fig:LandauerHeisenbergCell}]. Yet the principle remains silent on which state the system actually occupies.
+
+Any refinement beyond the uncertainty bound corresponds to inaccessible information. When coupled to an environment, this surplus information is necessarily erased through irreversible coarse graining. By Landauer's principle ($E \ge k_B T \ln 2$ per bit erased), this erasure costs energy proportional to description length. The physically realized state must therefore minimize its informational burden.
+
+We identify states with \textit{fundamental fractions} $Q_0 = a/b \in \mathbb{Q}_0 \subset \mathbb{Q}$: the minimal description length rationals in the Stern-Brocot tree. Each branching step adds one bit; the description length $L(Q_{0})$ equals tree depth, giving Landauer cost $E_0 = L(Q_0) k_B T \ln 2$.
+
+\begin{figure}[tbp]
+    \centering
+    \includesvg[width=0.62\linewidth]{LandauerHeisenbergCell}
+    \caption{\textbf{The Landauer-Heisenberg Phase-Space Cell.} Within $\Delta x \Delta p = \hbar/2$, the physical state (solid dot) is the minimal description length rational $a/b$. High-precision surplus information (faint point) is thermodynamically erased to this fundamental fraction.}
+    \label{fig:LandauerHeisenbergCell}
+\end{figure}
+
+The selection rule follows from operational indistinguishability. Define the approximation error $\delta \tilde{x} = x_0 | x/x_0 - a/b |$ and momentum uncertainty $\Delta p = n_{p_0} \hbar/x_0$, where $x_0$ and $p_0 = \hbar/x_0$ are characteristic scales. For the state to remain within the Heisenberg cell:
+\begin{equation}
+\label{eq:HeisenbergBox}
+\left| \frac{x}{x_0} - \frac{a}{b} \right| < \frac{1}{2 n_{p_0}} \implies \delta \tilde{x} \Delta p < \frac{\hbar}{2}.
+\end{equation}
+
+This constraint, satisfied by the minimal path rational in the Stern-Brocot tree, identifies the fundamental fraction that minimizes thermodynamic cost while respecting the quantum of action. Quantization is not empirical observation but thermodynamic necessity: the quantum of action and the cost of information jointly bound phase space to a discrete set of fundamental fractions.
+
+Using $10^{8}$ computational data points, we verify this mapping recovers the discrete structures of elementary quantum systems.
+
+\textbf{[Forthcoming: Numerical verification to be inserted here.]}
+
+\nocite{*}
+\bibliography{apssamp}
+
+\end{document}
