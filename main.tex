@@ -14,7 +14,7 @@
 \title{Quantized Phase-Space from Information Erasure}
 
 \begin{abstract}
-The Second Law of Thermodynamics drives systems toward maximum entropy. We show that, when applied to the coarse-grained action in symplectic phase space, this imperative maximizes total entropy by erasing the surplus information that is operationally indistinguishable within minimal Heisenberg cells thereby collapsing the continuum into a quantized geometry. Through numerical analysis of the harmonic oscillator, we demonstrate that this emergent geometry recovers the marginals of the Wigner quasiprobability distribution. These results suggest that quantized phase space is a thermodynamic necessity, providing quantum mechanics with a geometric correspondence that operates independently from the postulates of probability waves and superposition.
+The Second Law of Thermodynamics drives systems toward maximum entropy. We show that, when applied to the quantum of action in symplectic phase space, this imperative maximizes total entropy by erasing the surplus information that is operationally indistinguishable within minimal Heisenberg cells thereby collapsing the continuum into a quantized geometry. Through numerical analysis of the harmonic oscillator, we demonstrate that this emergent geometry recovers the marginals of the Wigner quasiprobability distribution. These results suggest that quantized phase space emerges from thermodynamic necessity, providing quantum mechanics with a geometric correspondence that operates independently from the postulates of probability waves and superposition.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -26,7 +26,7 @@ The Second Law of Thermodynamics drives systems toward maximum entropy. We show 
 
 \section{Notation}
 
-We define $x_{?}$ as the pre-erasure microstate: the original, fine-grained coordinate of the system. We say that information has been erased during an observation because we will never find out what the state $x_{?}$ was originally. Inside the quantum of action $x_0 p_0 = h/2$ (the coarse-grained minimal Heisenberg cell), $x_{?}$ is operationally indistinguishable from the resulting observed state $x$ such that 
+We define $x_{?}$ as the pre-observation, pre-erasure microstate: the original, fine-grained coordinate of the system. We say that information has been erased during an observation because we will never find out what the state $x_{?}$ was originally. Inside the quantum of action $x_0 p_0 = h/2$ (the coarse-grained minimal Heisenberg cell), $x_{?}$ is operationally indistinguishable from the resulting observed state $x$ such that 
 $$|x_{?}-x|\Delta p<h/2.$$ 
 
 Because the specific value of $x_{?}$ is rendered forever unknowable by this many-to-one compression, the erasure is logically irreversible. 
@@ -45,7 +45,7 @@ $$x = \mathcal{U}(\mathbf{b^*})$$
 where $\mathcal{U}$ represents the universal physical constructor that 
 identifies the state $x$ as the output of the minimal program $\mathbf{b^*}$ 
 that satisfies the resolution limit $|x_{?} - x| \Delta p < h/2$. In this 
-framework, the transition to a quantized state is a physical search for the 
+framework, the transition to a quantized state is a thermodynamic selection of the 
 lowest-complexity representation permitted by the system's energy scale. 
 This selection is governed by the principle that the universe naturally 
 settles into the state of \textit{minimal informational action} [1]. As 
@@ -74,23 +74,24 @@ In this framework, the Stern-Brocot tree—a complete binary search tree of all 
 x = x_0 \operatorname{SB}(\mathbf{b^*}) = x_0 X
 \end{equation}
 This traversal is not indefinite; it is governed by the thermodynamic necessity to halt. As the tree is descended, the bit-length $|\mathbf{b^*}|$ increases, incurring an cumulative erasure cost of $|\mathbf{b^*}|kT\ln 2$. Consequently, the algorithmic thermodynamics select the exact level where the resolution limit $|x_{?} - x_0 \operatorname{SB}(\mathbf{b^*})| \Delta p < h/2$ is first satisfied. By embedding the Stern-Brocot tree directly into the constructor, the physical system ensures that the resulting quantized value $x$ is the most algorithmically efficient representation of the  available microstates 
-$\{x_? : |x_? - x| \Delta p < h/2 \}$. This mechanism minimizes the complexity of the physical record by selecting the most accessible rational convergent within the resolution bound, effectively forcing the phase-space to emerge as a quantized structure from the thermodynamic limit of information erasure.
+$\{x_? : |x_? - x_0 X| \Delta p < h/2 \}$. This mechanism minimizes the complexity of the physical record by selecting the most accessible rational convergent within the resolution bound, effectively forcing the phase-space to emerge as a quantized structure from the thermodynamic limit of information erasure.
 
 \medskip
 The physical impossibility of resolving irrational states is best illustrated by the Golden Ratio, 
 $$\phi \approx 1.618 \ 033 \ 988 \ 749 \ \dots$$ 
-In the Stern-Brocot implementation of $\mathcal{U}$, the program $b$ required to compute $\phi$ is a non-terminating instruction set $b = (1, 0, 1, 0, \dots)$. This infinite string exposes a critical divergence between the Shannon entropy $H_{Sh}$---the \textit{ensemble average} of information---and the algorithmic entropy $H_{alg}$, which quantifies the physical complexity of the \textit{individual microstate}. 
+In the Stern-Brocot implementation of $\mathcal{U}$, the program required to compute $x = \phi x_0$ is a non-terminating instruction set $b_{\phi} = (1, 0, 1, 0, \dots)$. This infinite string exposes a critical divergence between the Shannon entropy $H_{Sh}$---the \textit{ensemble average} of information---and the algorithmic entropy $H_{alg}$, which quantifies the physical complexity of the \textit{individual microstate}. 
 
-Following the framework of algorithmic thermodynamics \cite{Ebtekar2025}, we define:
+Following the framework of algorithmic thermodynamics \cite{Ebtekar2025}, we define the relationship between the ensemble average and the individual microstate complexity:
 \begin{equation}
-    H_{Sh} = -\sum p_i \ln p_i, \quad H_{alg}(x) = |b|
+    H_{Sh} = -\sum_{i \in \{0,1\}} w_i \log_2 w_i, \quad H_{alg}(x_{?}) = |b|
 \end{equation}
-While the Shannon entropy of the alternating rule is finite and low, the physical Landauer cost of manifesting the specific microstate is driven by the absolute length of the instruction set:
+where $w_i$ represents the statistical probability of a branching instruction $i$ within the ensemble, and $H_{alg}(x_{?})$ is the actual length of the instruction set $b$ required to manifest the specific microstate $x_?$. While the Shannon entropy of the alternating rule for $\phi$ remains finite and low, the physical Landauer cost of manifesting the individual microstate is driven by the absolute bit-length of its program:
 \begin{equation}
     \mathcal{W} = \lim_{|b| \to \infty} |b| k T \ln 2 = \infty
 \end{equation}
 
-This distinction is fundamental: whereas Shannon entropy measures our mean ignorance of an ensemble, the algorithmic complexity $|b|$ quantifies the actual thermodynamic weight of the specific microstate. As Zurek established in his formulation of \textit{physical entropy} \cite{Zurek1989}, the total entropy $S_d = H_{alg} + H_{Sh}$ must account for the information already manifested in the record. Since no local thermal reservoir possesses the infinite energy capacity required to finalize a non-terminating program, the constructor $\mathcal{U}$ is forced to \textit{halt} at a finite rational convergent. This thermodynamic barrier proves that irrational coordinates are physically unrealizable, leaving the quantized rational record as the only possible state of the phase-space.
+This distinction is fundamental: whereas Shannon entropy measures our mean ignorance of an ensemble, the algorithmic complexity $|b|$ quantifies the actual thermodynamic weight of the specific microstate at each step of its resolution. As Zurek established in his formulation of \textit{physical entropy} \cite{Zurek1989}, the total entropy $S_d = H_{alg} + H_{Sh}$ must account for the information already manifested in the record. Because every additional bit in $b$ incurs a cumulative energy cost, the physical system is subject to an informational pressure that favors the state of minimal complexity. Since no local thermal reservoir possesses the infinite energy capacity required to finalize the non-terminating program $b_\phi$, the constructor $\mathcal{U}$ is forced to \textit{halt} at the minimal program $\mathbf{b^*}$---the unique rational convergent that satisfies the \textbf{Heisenberg resolution limit} $|x_{?} - x| \Delta p < h/2$ with the least thermodynamic work. This thermodynamic barrier proves that irrational coordinates are physically unrealizable, leaving the quantized rational record as the only possible state of the phase-space.
+
 
 \subsection{Statistical Heisenberg Uncertainty Principle}
 
