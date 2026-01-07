@@ -7,7 +7,6 @@
 \usepackage{bm}% bold math
 \usepackage{orcidlink}
 \usepackage{mathtools}
-\usepackage{amsmath}
 \graphicspath{{figures/}}
 \DeclareMathOperator*{\argmin}{argmin}
 \begin{document}
@@ -27,6 +26,72 @@ The Second Law of Thermodynamics drives systems toward maximum entropy. We show 
 
 \section{Notation}
 
+We define $x_{?}$ as the pre-erasure microstate: the original, fine-grained coordinate of the system. We say that information has been erased during an observation because we will never find out what the state $x_{?}$ was originally. Inside the quantum of action $x_0 p_0 = h/2$ (the coarse-grained minimal Heisenberg cell), $x_{?}$ is operationally indistinguishable from the resulting observed state $x$ such that 
+$$|x_{?}-x|\Delta p<h/2.$$ 
+
+Because the specific value of $x_{?}$ is rendered forever unknowable by this many-to-one compression, the erasure is logically irreversible. 
+
+\medskip
+
+We define $b$ as the program bit string of length $|b|$ required to specify 
+the observed state $x$. Because every additional bit in the string incurs 
+a thermodynamic erasure cost of $kT \ln 2$, the physical system is subject 
+to an algorithmic-thermodynamic pressure. It is therefore a thermodynamic 
+necessity that from the ensemble of available microstates 
+$\{x_? : |x_? - x| \Delta p < h/2 \}$, the observed value $x$ must 
+correspond to the unique bit string $\mathbf{b^*}$ of minimal length 
+$|\mathbf{b^*}|$. This is expressed as the algorithmic mapping 
+$$x = \mathcal{U}(\mathbf{b^*})$$ 
+where $\mathcal{U}$ represents the universal physical constructor that 
+identifies the state $x$ as the output of the minimal program $\mathbf{b^*}$ 
+that satisfies the resolution limit $|x_{?} - x| \Delta p < h/2$. In this 
+framework, the transition to a quantized state is a physical search for the 
+lowest-complexity representation permitted by the system's energy scale. 
+This selection is governed by the principle that the universe naturally 
+settles into the state of \textit{minimal informational action} [1]. As 
+Landauer established, longer strings represent higher-potential energy states 
+for the coupled system-reservoir ensemble, and thus $\mathbf{b^*}$ is the 
+only state whose entropy can be fully dissipated by the local thermal 
+background [2]. Furthermore, in the framework of the 
+\textit{Foundations of Algorithmic Thermodynamics} [3], $\mathbf{b^*}$ 
+represents the "coarsest" algorithmic descriptor that remains invariant 
+under environmental interaction. Any higher-complexity representation $b_{n}$ 
+is thermodynamically unstable; the extra information is effectively 
+"scrambled" by the thermal reservoir, forcing the system to halt at the 
+minimal bit string $\mathbf{b^*}$. It is this thermodynamic necessity of 
+erasing the original state and selecting the shortest description 
+$\mathbf{b^*}$ that forces the phase-space to emerge as a quantized 
+structure rather than a continuous one.
+
+\medskip
+
+The implementation of the universal constructor $\mathcal{U}$ is operationally realized through the Stern-Brocot decoding function $\operatorname{SB}$, which maps the minimal program $\mathbf{b^*}$ to a unique rational $X \in \mathbb{Q}$. The constructor is thus defined by scaling this rational address with the fundamental length unit:
+\begin{equation}
+\mathcal{U}(\mathbf{b^*}) = x_0 \operatorname{SB}(\mathbf{b^*})
+\end{equation}
+In this framework, the Stern-Brocot tree—a complete binary search tree of all positive rationals—acts as the decoding architecture for phase-space. The minimal program $\mathbf{b^*}$ is an ordered bit string where each bit represents a discrete branching instruction: a '0' for a left (L) traversal and a '1' for a right (R) traversal. The constructor $\mathcal{U}$ reads these instructions to navigate from the root toward the rational $X$ that identifies the quantized state.
+\begin{equation}
+x = x_0 \operatorname{SB}(\mathbf{b^*}) = x_0 X
+\end{equation}
+This traversal is not indefinite; it is governed by the thermodynamic necessity to halt. As the tree is descended, the bit-length $|\mathbf{b^*}|$ increases, incurring an cumulative erasure cost of $|\mathbf{b^*}|kT\ln 2$. Consequently, the algorithmic thermodynamics select the exact level where the resolution limit $|x_{?} - x_0 \operatorname{SB}(\mathbf{b^*})| \Delta p < h/2$ is first satisfied. By embedding the Stern-Brocot tree directly into the constructor, the physical system ensures that the resulting quantized value $x$ is the most algorithmically efficient representation of the  available microstates 
+$\{x_? : |x_? - x| \Delta p < h/2 \}$. This mechanism minimizes the complexity of the physical record by selecting the most accessible rational convergent within the resolution bound, effectively forcing the phase-space to emerge as a quantized structure from the thermodynamic limit of information erasure.
+
+\medskip
+The physical impossibility of resolving irrational states is best illustrated by the Golden Ratio, 
+$$\phi \approx 1.618 \ 033 \ 988 \ 749 \ \dots$$ 
+In the Stern-Brocot implementation of $\mathcal{U}$, the program $b$ required to compute $\phi$ is a non-terminating instruction set $b = (1, 0, 1, 0, \dots)$. This infinite string exposes a critical divergence between the Shannon entropy $H_{Sh}$---the \textit{ensemble average} of information---and the algorithmic entropy $H_{alg}$, which quantifies the physical complexity of the \textit{individual microstate}. 
+
+Following the framework of algorithmic thermodynamics \cite{Ebtekar2025}, we define:
+\begin{equation}
+    H_{Sh} = -\sum p_i \ln p_i, \quad H_{alg}(x) = |b|
+\end{equation}
+While the Shannon entropy of the alternating rule is finite and low, the physical Landauer cost of manifesting the specific microstate is driven by the absolute length of the instruction set:
+\begin{equation}
+    \mathcal{W} = \lim_{|b| \to \infty} |b| k T \ln 2 = \infty
+\end{equation}
+
+This distinction is fundamental: whereas Shannon entropy measures our mean ignorance of an ensemble, the algorithmic complexity $|b|$ quantifies the actual thermodynamic weight of the specific microstate. As Zurek established in his formulation of \textit{physical entropy} \cite{Zurek1989}, the total entropy $S_d = H_{alg} + H_{Sh}$ must account for the information already manifested in the record. Since no local thermal reservoir possesses the infinite energy capacity required to finalize a non-terminating program, the constructor $\mathcal{U}$ is forced to \textit{halt} at a finite rational convergent. This thermodynamic barrier proves that irrational coordinates are physically unrealizable, leaving the quantized rational record as the only possible state of the phase-space.
+
 \subsection{Statistical Heisenberg Uncertainty Principle}
 
 $$
@@ -44,7 +109,7 @@ $$
 \subsubsection{The Symplectic Capacity}
 
 $$
-\mathcal{A} = \mathfrak{a} ( L \times P) \ge \frac{h}{2}
+\mathcal{A} = \mathfrak{a} ( \mathcal{L} \times \mathcal{P}) \ge \frac{h}{2}
 $$
 
 $$
@@ -58,56 +123,75 @@ $$
 $$
 
 $$
-\Delta x := x_0 L \quad \Delta p := p_0 P
+\Delta x := \mathcal{L} x_0 \quad \Delta p := \mathcal{P} p_0
 $$
 
+\subsection{Quantum Harmonic Oscillator}
 
+$$
+H = \frac{\mathcal{P}^2 p_0^2}{2m} + \frac{1}{2}m\omega^2 \mathcal{L}^2 x_0^2
+$$
+
+$$
+H = \frac{h}{2}(\mathcal{P}^2 + \mathcal{L}^2)f
+$$
 
 \subsection{Fundamental Fraction}
 
+\begin{quote}
+
+We say that information has been erased during the compression because we will never find out where the molecule was originally.
+
+\hfill --- \textit{The Physics of Forgetting}
+
+\end{quote}
+
+We say that information has been erased $|b|kT\ln{2}$ during the observation $x_? \rightarrow x = X x_0, \ X \in \mathbb{Q}$ because we will never find out what the state $x_?$ was originally. State values within the coarse-grained Heisenberg uncertainty cell (quantum blob) are operationally indistinguishable 
+$|x_? - x| \Delta p < h/2$. Each $X$ corresponds to a bit string $b$ which is unique for the given physical system. For any physical system $\Delta x := \mathcal{L} x_0 \ \Delta p := \mathcal{P} p_0$ is defined by the Hamiltonian. The dimensionless scaling factor $\mathcal{P}$ indicates the momentum and also the resolution limit of the conjugate observable and is determined by the Hamiltonian's energy scale. We find $X$ and $b$ using the Stern-Brocot tree such that $\delta_x = |x_?/x_0 - X| < 1 / \mathcal{P} \implies \delta_x \Delta p < h/2$, using the hard symplectic boundary $h/2$ of the Heisenberg cell as opposed to the fuzzy statistical one $\hbar/2$. The spread of the position and momentum as $\mathcal{P}$ increases the ensemble Shannon entropy while the increasing resolution $1/\mathcal{P}$ increases the algorithmic entropy required to erase the information about the unknown state.
+
 $$
-|x - \tilde{x}| < \Delta x
+|x_? - x| < \Delta x
 \implies
-|x - \tilde{x}| \Delta p < \mathcal{A}
+|x_? - x| \Delta p < \frac{h}{2}
 $$
 
 
 $$
 \delta_x = 
-\frac{|x - \tilde{x}|}{x_0} = 
-\frac{\left | x - \frac{a}{b} x_0 \right |}{x_0} = 
-x_0 \frac{\left | \frac{x}{x_0} - \frac{a}{b} \right | }{x_0} =
-\left | \frac{x}{x_0} - \frac{a}{b} \right |
+\frac{|x_? - x|}{x_0} = 
+\frac{\left | x_? - \frac{a}{b} x_0 \right |}{x_0} = 
+x_0 \frac{\left | \frac{x_?}{x_0} - \frac{a}{b} \right | }{x_0} =
+\left | \frac{x_?}{x_0} - \frac{a}{b} \right |
 $$
 
 $$
-\left | \frac{x}{x_0} - \frac{a}{b} \right | x_0 p_0 P < \mathcal{A}
+\left | \frac{x_?}{x_0} - \frac{a}{b} \right | x_0 p_0 P < \mathcal{A}
 $$
 
-To satisfy the containment condition $|x-\tilde{x}|<\Delta x$ with minimal algorithmic overhead, the search for a rational approximation must saturate the symplectic floor. At this limit of information erasure, the coarse-grained action converges to the quantum of action: $\mathcal{A}\rightarrow \mathfrak{a}=h/2$.
+To satisfy the containment condition $|x_?-x|<\Delta x$ with minimal algorithmic overhead, the search for a rational approximation must saturate the symplectic floor. At this limit of information erasure, the coarse-grained action converges to the quantum of action: $\mathcal{A}\rightarrow \mathfrak{a}=h/2$.
 
 $$
-\left | \frac{x}{x_0} - \frac{a}{b} \right | \mathfrak{a} P < \mathfrak{a}
+\left | \frac{x_?}{x_0} - \frac{a}{b} \right | \mathfrak{a} P < \mathfrak{a}
 $$
 
 
 $$
-\left | \frac{x}{x_0} - \frac{a}{b} \right | \frac{h}{2} P < \frac{h}{2}
+\left | \frac{x_?}{x_0} - \frac{a}{b} \right | \frac{h}{2} P < \frac{h}{2}
 $$
 
 $$
-\delta_x = \left | \frac{x}{x_0} - \frac{a}{b} \right | < \frac{1}{P}
+\delta_x = \left | \frac{x_?}{x_0} - \frac{a}{b} \right | < \frac{1}{P}
 $$
 
 We have a dimensionless form of Zurek's equation $\delta_x = 1/P$.
 
 \subsection{Symplectic Symmetry}
-The derivation for the conjugate variable $p$ follows by the same logic under the canonical transformation $(x, p) \to (p, -x)$. Because the symplectic capacity of the quantum blob is an invariant of the phase-space geometry, the momentum also satisfies:
-$$ \delta_p = \frac{|p - \tilde{p}|}{p_0} = \left | \frac{p}{p_0} - \frac{c}{d} \right | $$
+The derivation for the conjugate variable $p$ follows by the same logic:
+$$ \delta_p = \frac{|p_? - p|}{p_0} = \left | \frac{p_?}{p_0} - \frac{c}{d} \right | $$
 Applying the same boundary condition for the blob area:
 $$ \delta_p p_0 \Delta x \ge \frac{h}{2} \implies \left | \frac{p}{p_0} - \frac{c}{d} \right | x_0 p_0 L \ge \frac{h}{2} $$
 Substituting the fundamental action unit $x_0 p_0 = h/2$ yields the symmetric result:
-$$ \delta_p = \left | \frac{p}{p_0} - \frac{c}{d} \right | \ge \frac{1}{L} $$
+$$ \delta_p = \left | \frac{p_?}{p_0} - \frac{c}{d} \right | \ge \frac{1}{L} $$
 We have a dimensionless form of Zurek's equation $\delta_p = 1/L$.
 This demonstrates that the resolution of phase space is constrained by the same algorithmic entropy in both coordinates.
 
