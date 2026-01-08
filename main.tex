@@ -14,7 +14,7 @@
 \title{Quantized Phase-Space from Information Erasure}
 
 \begin{abstract}
-The Second Law of Thermodynamics drives systems toward maximum entropy. We show that, when applied to the quantum of action in symplectic phase space, this imperative maximizes total entropy by erasing the surplus information that is operationally indistinguishable within minimal Heisenberg cells thereby collapsing the continuum into a quantized geometry. Through numerical analysis of the harmonic oscillator, we demonstrate that this emergent geometry recovers the marginals of the Wigner quasiprobability distribution. These results suggest that quantized phase space emerges from thermodynamic necessity, providing quantum mechanics with a geometric correspondence that operates independently from the postulates of probability waves and superposition.
+The Second Law of Thermodynamics drives systems toward maximum entropy. Applied to the symplectic quantum of action, this imperative maximizes total entropy by erasing surplus information from inaccessible microstates within minimal Heisenberg cells. The resulting collapse transforms the continuum into a quantized geometry. Through numerical analysis of the harmonic oscillator, we demonstrate that this emergent geometry recovers the marginals of the Wigner quasiprobability distribution. These results suggest that quantized phase space emerges from thermodynamic necessity, providing quantum mechanics with a geometric correspondence that operates independently from the postulates of probability waves and superposition.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -34,7 +34,10 @@ The Second Law of Thermodynamics drives systems toward maximum entropy. We show 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{Erasing surplus bits from $x_?$  Phase-space representation of the symplectic quantum of action $\mathcal{A}=h/2$. The shaded region represents the "quantum blob" with area constraint $x_0 p_0 = h/2$.}
+    
+    \caption{\textbf{Erasure within the quantum of action.} Within the symplectic quantum of action $\mathcal{A}=h/2$, all surplus bits are erased from the inaccessible microstate $x_?$ having program $s_?=110101010\dots$, leaving the state $x$ with the minimal program $\mathbf{s^*}=1101$ that runs on the Stern-Brocot universal computer $\mathcal{U}_{\operatorname{SB}}$. This reduction constitutes a Landauer erasure with a work cost of $W \ge k_B T \ln(2) |\mathbf{s^*}|$,
+    where $|\mathbf{s^*}| = K(x)$ is the Kolmogorov complexity of the
+    physical state.}
     \label{fig:quantum_blob}
 \end{figure}
 
@@ -83,7 +86,7 @@ structure rather than a continuous one.
 
 The implementation of the universal constructor $\mathcal{U}$ is operationally realized through the Stern-Brocot decoding function $\operatorname{SB}$, which maps the minimal program $\mathbf{b^*}$ to a unique rational $X \in \mathbb{Q}$. The constructor is thus defined by scaling this rational address with the fundamental length unit:
 \begin{equation}
-\mathcal{U}(\mathbf{b^*}) = x_0 \operatorname{SB}(\mathbf{b^*})
+\mathcal{U}(\mathbf{s^*}) = x_0 \operatorname{SB}(\mathbf{s^*})
 \end{equation}
 In this framework, the Stern-Brocot tree—a complete binary search tree of all positive rationals—acts as the decoding architecture for phase-space. The minimal program $\mathbf{b^*}$ is an ordered bit string where each bit represents a discrete branching instruction: a '0' for a left (L) traversal and a '1' for a right (R) traversal. The constructor $\mathcal{U}$ reads these instructions to navigate from the root toward the rational $X$ that identifies the quantized state.
 \begin{equation}
