@@ -54,28 +54,30 @@ The Second Law of Thermodynamics applied to the symplectic quantum of action max
 
 \section{Notation}
 
+Physical quantities are represented as dimensionless multiples of their characteristic base units (\(p_{0},q_{0},E_{0},t_{0}\)). We define the fundamental action unit as $A_0=\pi/4 \cdot x_0 p_0 = h/2$. We introduce calligraphic scaling parameters (\(\mathcal{P,L ,E,T, A}\)) to represent the dimensionless scaling factors of these domains. Specifically, \(\mathcal{P}\) denotes the momentum scale, which serves as the reciprocal constraint on the machine's spatial resolution.
+
 \noindent
 \textbf{System Operators and States} \\
-Microstate (Initial): $q_?$ \\
+Microstate (Initial): $\mu_q := q_? q_0 $ \\
+Dimensionless Microstate (Initial): $q_?$ \\
 Macrostate (Final): $\mathrm{Q} \in \mathbb{Q}$ \\
 
-\\
-
 \noindent
-\textbf{The Landauer Universal Computer} \\
-Landauer Universal Computer: $\mathcal{U}_{\operatorname{L}}$ \\
+\textbf{Universal Computing Machine} \\
+Landauer Universal Computing Machine: $\mathcal{U}_{\operatorname{L}}$ \\
 Programs Bit String: $s^*$ \\
+Program length: $|s^*|$ \\
+Bounded by the available action $S \le A/A_0$\\
+Physical Entropy: $\mathrm{S}= \mathrm{H} + \mathrm{K}$ \\
+Shannon Entropy: $\mathrm{H}$ \\
+Kolmogorov Complexity: $\mathrm{K} = |s^*|$\\
 Erasure: $\mathcal{E}$, \quad $\Omega(\mathrm{Q}) = |\{q_?\} \overset{\mathcal{E}}{\mapsto} \mathrm{Q}|$\\
-Criteria: $|q_?-\mathrm{Q}| < \frac{\pi}{4} \Pi^{-1}$
-
-\\
+Momentum: \(p=p_{0}\mathcal{P}\), \ \small(\(\mathcal{P}\): momentum cardinality) \\
+Criteria: $|q_?-\mathrm{Q}| < \frac{\pi}{4} \mathcal{P}^{-1}$ \\
 
 \noindent
 \textbf{Energy and Informational Quantities} \\
 Hamiltonian: $\mathcal{H}$ \\
-Shannon Entropy: $\mathrm{H}$ \\
-Kolmogorov Complexity: $K = |s^*|$\\
-Physical Entropy: $\Sigma$ \\
 \\
 \noindent
 \textbf{Geometric and Action Scales} \\
