@@ -42,7 +42,7 @@
 \title{Quantum Phase-Space from Information Erasure}
 
 \begin{abstract}
-The Second Law of Thermodynamics applied to the symplectic quantum of action maximizes entropy by erasing surplus information within the minimal Heisenberg cell, manifesting a complexity-action duality. The resulting collapse transforms the continuum into a quantized geometry. Numerical analysis of the harmonic oscillator demonstrates that this geometry recovers the marginals of the Wigner distribution. These results suggest quantized phase space is a thermodynamic necessity, providing quantum mechanics with a geometric correspondence independent of probability waves.
+The Second Law of Thermodynamics applied to the symplectic quantum of action maximizes entropy by erasing surplus information within the minimal Heisenberg cell, manifesting a complexity-action duality. The resulting collapse transforms the continuum into a quantized geometry. Numerical analysis proves that this geometry recovers the Wigner marginals of the quantum harmonic oscillator, the quasinormal spectral modes of black hole event horizons, and the quantized azimuthal projections of spin. These results suggest quantized phase space is a thermodynamic necessity, providing quantum mechanics with a geometric correspondence independent of probability waves.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -56,30 +56,39 @@ The Second Law of Thermodynamics applied to the symplectic quantum of action max
 
 \noindent
 \textbf{System Operators and States} \\
-Microstate (Initial): $x_? \in \Gamma$ \\
-Macrostate (Final): $\mathrm{X} \in \mathbb{Q}$ \\
-Erasure Map: $\mathcal{E}$, \quad $\Omega(\mathrm{X}) = |\{x_?\} \overset{\mathcal{E}}{\mapsto} \mathrm{X}|$\\
-Hamiltonian: $\mathcal{H}$ \\
+Microstate (Initial): $q_?$ \\
+Macrostate (Final): $\mathrm{Q} \in \mathbb{Q}$ \\
 
 \\
+
 \noindent
-\textbf{Informational Quantities} \\
+\textbf{The Landauer Universal Computer} \\
+Landauer Universal Computer: $\mathcal{U}_{\operatorname{L}}$ \\
+Programs Bit String: $s^*$ \\
+Erasure: $\mathcal{E}$, \quad $\Omega(\mathrm{Q}) = |\{q_?\} \overset{\mathcal{E}}{\mapsto} \mathrm{Q}|$\\
+Criteria: $|q_?-\mathrm{Q}| < \frac{\pi}{4} \Pi^{-1}$
+
+\\
+
+\noindent
+\textbf{Energy and Informational Quantities} \\
+Hamiltonian: $\mathcal{H}$ \\
 Shannon Entropy: $\mathrm{H}$ \\
-Kolmogorov Complexity: $K$ \\
+Kolmogorov Complexity: $K = |s^*|$\\
 Physical Entropy: $\Sigma$ \\
 \\
 \noindent
 \textbf{Geometric and Action Scales} \\
-Classical Action: $\mathcal{A}$ \\
+Action: $\mathcal{A}$ \\
 Quantum of Action: $\mathcal{A}_0$ \\
-Relative Position: $\mathcal{L}$ \\
-Relative Momentum: $\mathcal{P}$
+Action Coordinate Constraint: $\Lambda$ \\
+Action Momentum Pressure: $\Pi$
 
 \begin{equation}
-\delta_x \Delta p < \frac{h}{2}
+\delta_q \Delta p < \frac{h}{2}
 \end{equation}
 \begin{equation}
-\Delta x \delta_p < \frac{h}{2}
+\Delta q \delta_p < \frac{h}{2}
 \end{equation}
 
 \begin{figure}[htbp]
