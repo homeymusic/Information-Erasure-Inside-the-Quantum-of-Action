@@ -57,10 +57,10 @@ The Second Law of Thermodynamics, when applied to the symplectic quantum of acti
 Total system entropy $ \mathrm{S} = \mathrm{H} + \mathrm{K}$ must be less than or equal to the system's action $A$ normalized by the quantum of action $A_0=\frac{\pi}{4} \Delta q \Delta p = \frac{h}{2}$.
 
 \begin{equation}
-\mathrm{S} \le \frac{A}{A_0}
+\mathcal{S} \approx \frac{\pi}{4} \left( \frac{\mathcal{A}}{A_0} \right)^{\frac{n_\perp}{2}}
 \end{equation}
 
-$\mathrm{H}$ and $\mathrm{K}$ are Shannon entropy and Kolmogorov complexity, respectively.
+$\mathrm{H}$ and $\mathrm{K}$ are Shannon entropy and Kolmogorov complexity, respectively. Where $n$ is the physical spatial dimension, $n_{\perp }$ is the transverse reduction. For example, for the 1D QHO, $n=1$ and $n_{\perp } = 1/2$, for the 3D Schwarzschild Horizon $n=3$ and $n_{\perp } = 2$.
 
 \begin{figure}[htbp]
     \centering
@@ -167,7 +167,7 @@ This ensures that any "gain" in bit-length for the position coordinate necessita
 \subsection*{Inaccessible Microstates}
 
 We define $x_{?}$ as an unknowable value, a pre-erasure microstate: the original, fine-grained coordinate of the system. We say that information has been erased during an observation because we will never find out what the state $x_{?}$ was originally. Inside the quantum of action $S = x_0 p_0 = h/2$ (the coarse-grained minimal Heisenberg cell), $x_{?}$ is operationally indistinguishable from the resulting observed state $x$ such that 
-$$|x_{?}-x|\Delta p<h/2.$$ 
+$$\frac{\pi}{4}\mathcal{L}|q_{?}-\mathrm{Q}|\Delta p<h/2.$$ 
 
 Because the specific value of $x_{?}$ is rendered forever unknowable by this many-to-one compression, the erasure is logically irreversible. 
 
@@ -281,6 +281,7 @@ $$
 
 \subsection{Fundamental Fraction}
 
+
 \begin{quote}
 
 We say that information has been erased during the compression because we will never find out where the molecule was originally.
@@ -289,18 +290,18 @@ We say that information has been erased during the compression because we will n
 
 \end{quote}
 
-We say that information has been erased $|b|kT\ln{2}$ during the observation $x_? \rightarrow x = X x_0, \ X \in \mathbb{Q}$ because we will never find out what the state $x_?$ was originally. State values within the coarse-grained Heisenberg uncertainty cell (quantum blob) are operationally indistinguishable 
-$|x_? - x| \Delta p < h/2$. Each $X$ corresponds to a bit string $b$ which is unique for the given physical system. For any physical system $\Delta x := \mathcal{L} x_0 \ \Delta p := \mathcal{P} p_0$ is defined by the Hamiltonian. The dimensionless scaling factor $\mathcal{P}$ indicates the momentum and also the resolution limit of the conjugate observable and is determined by the Hamiltonian's energy scale. We find $X$ and $b$ using the Stern-Brocot tree such that $\delta_x = |x_?/x_0 - X| < 1 / \mathcal{P} \implies \delta_x \Delta p < h/2$, using the hard symplectic boundary $h/2$ of the Heisenberg cell as opposed to the fuzzy statistical one $\hbar/2$. The spread of the position and momentum as $\mathcal{P}$ increases the ensemble Shannon entropy while the increasing resolution $1/\mathcal{P}$ increases the algorithmic entropy required to erase the information about the unknown state.
+We say that information has been erased $|\mathbf{s^*}|kT\ln{2}$ when the microstate collapses to the macrostate $q_? \rightarrow \mathrm{Q}, \ \mu_q = q_?q_0, \ q =  \mathrm{Q} q_0, \ \mathrm{Q} \in \mathbb{Q}$ (dimensionless, normalized units) because we will never find out what the state $q_?$ was originally. State values within the coarse-grained Heisenberg uncertainty cell (quantum blob) are operationally indistinguishable 
+$\frac{\pi}{4}q_0\mathcal{L}|q_? - \mathrm{Q}| \Delta p < h/2$. Each $\mathrm{Q}$ corresponds to a bit string $\mathbf{s^*}$ which is unique for the given physical system. For any physical system $\Delta q := q_0\mathcal{L}, \ \Delta p := p_0 \mathcal{P}$ is defined by the Hamiltonian. The dimensionless normalized factor $\mathcal{P}$ indicates the momentum and also the resolution limit of the conjugate observable and is determined by the Hamiltonian's energy scale. We find $\mathrm{Q}$ and $\mathbf{s^*}$ using the Stern-Brocot tree such that $\delta_q = |q_?/q_0 - \mathrm{Q}| < 1 / \mathcal{P} \implies \delta_q \Delta p < h/2$, using the hard symplectic boundary $h/2$ of the Heisenberg cell as opposed to the fuzzy statistical one $\hbar/2$. The spread of the position and momentum as $\mathcal{P}$ increases the ensemble Shannon entropy $\mathrm{H}$ while the increasing resolution $1/\mathcal{P}$ increases the algorithmic entropy $\mathrm{K}$ required to erase the information about the unknown state.
 
 $$
-|x_? - x| < \Delta x
+|q_? - \mathrm{Q}| < \Delta q
 \implies
-|x_? - x| \Delta p < \frac{h}{2}
+\frac{\pi}{4}\mathcal{L}|q_? - \mathrm{Q}| \Delta p < \frac{h}{2}
 $$
 
 
 $$
-\delta_x = 
+\delta_q = 
 \frac{|x_? - x|}{x_0} = 
 \frac{\left | x_? - \frac{a}{b} x_0 \right |}{x_0} = 
 x_0 \frac{\left | \frac{x_?}{x_0} - \frac{a}{b} \right | }{x_0} =
@@ -452,4 +453,36 @@ d
 1. Margolus-Levitin Theorem and the "Quantum Speed Limit" The most direct parallel is the Margolus-Levitin Theorem, which states that the time \(\tau \) to reach an orthogonal state is bounded by \(\tau \ge \frac{h}{4E}\). If we rearrange this as \(\frac{E\tau }{h}\ge \frac{1}{4}\), and recognize \(E\tau \) as a form of action (\(S\)), the theorem essentially says that you need at least a quarter-unit of action to perform "one bit" of state-change.Recent 2025 refinements to this theorem have extended these bounds to "arbitrary fidelity," confirming that the number of operations per second is strictly limited by the system's energy.
 
 2. Honoring Brocot: The "erasure" \(\mathcal{E}(x_?) = x\) is the process of several teeth mapping to the same "tick" of the clock.
+
+\section*{Information Erasure and the Holographic Scaling of Action}
+
+In this framework, the emergence of a 1D \textbf{Quantum Harmonic Oscillator (QHO)} is modeled as a discrete erasure process within a phase-space manifold. Following the symplectic geometry of \textbf{de Gosson}, the fundamental unit of phase space is the \textit{quantum blob} with a symplectic capacity $A_0 = h/2$. We define the macrostate coordinate $q$ as the result of a \textbf{Landauer erasure} of a hidden microstate $\mu_q$. 
+
+Our results, based on $10^9$ discrete search realizations in a Stern-Brocot (SB) tree, indicate that the \textbf{Kolmogorov complexity} ($\mathcal{S}$) of the erasure gate follows a power-law scaling relative to the total Hamiltonian action $\mathcal{A}$. We define the \textbf{transverse reduction index} $n_\perp$ as the effective dimensionality of the information horizon. The algorithmic entropy is then bounded by the geometric scaling of the action ratio:
+
+\begin{equation}
+\mathcal{S} \approx \frac{\pi}{4} \left( \frac{\mathcal{A}}{A_0} \right)^{\frac{n_\perp}{2}}
+\end{equation}
+
+\noindent For the 1D QHO, the erasure maps the 2D symplectic area to a 1D coordinate projection, yielding $n_\perp = 1/2$. This recovers the observed $\mathcal{S} \sim \mathcal{A}^{1/4}$ scaling, representing a highly constrained, sub-holographic regime.
+
+\begin{table*}[t]
+\centering
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc|l}
+\hline\hline
+\textbf{Physical System} & \textbf{Spatial Dim ($n$)} & \textbf{Transverse ($n_\perp$)} & \textbf{Exponent} & \textbf{Growth Law} & \textbf{Information Regime} \\ \hline
+1D Emergent QHO          & 1 & 1/2 & 1/4 & $\mathcal{S} \sim \mathcal{A}^{1/4}$ & Sub-Holographic \\
+1D Light-Sheet           & 2 & 1   & 1/2 & $\mathcal{S} \sim \mathcal{A}^{1/2}$ & Square-Root Squeeze \\
+3D Schwarzschild Horizon & 3 & 2   & 1   & $\mathcal{S} \sim \mathcal{A}^{1}$   & \textbf{Susskind-CA Limit} \\
+4D Hyper-Bulk            & 4 & 3   & 3/2 & $\mathcal{S} \sim \mathcal{A}^{3/2}$ & Super-Holographic \\
+5D Bulk                  & 5 & 4   & 2   & $\mathcal{S} \sim \mathcal{A}^{2}$   & Quadratic Complexity \\
+\hline\hline
+\end{tabular*}
+\caption{The holographic projection hierarchy: Mapping the physical spatial dimension $n$ to the algorithmic entropy scaling. The transverse reduction $n_\perp = n - 1/2$ defines the effective dimensionality of the information horizon. The 1D case ($n_\perp = 1/2$) reflects the projection of a 2D symplectic blob onto a 1D erasure gate.}
+\label{tab:holographic_scaling}
+\end{table*}
+
+\subsection*{Operational Emergence in R}
+The discrete search is operationalized by enforcing a containment threshold on the microstate fluctuation $\delta_q = |q_? - Q|$ such that $\delta_q < \pi / (4\mathcal{P})$. The emergent macrostate coordinate is then scaled by the Hamiltonian factor $\mathcal{L}^2$, ensuring that the physical coordinate $q$ remains consistent with the energy of the oscillator while the information cost follows the $n_\perp/2$ bound.
+
 \end{document}
