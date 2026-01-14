@@ -52,8 +52,15 @@ By maximizing entropy through Landauer information erasure within the quantum of
 
 \maketitle
 
-\section{Overview}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{erase.pdf}
+    \label{fig:quantum_blob}
+    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action $\delta_q < \Delta q : A_0 = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, all surplus complexity from the many thermodynamically inaccessible microstates $\{q_?\}$ specified by binary programs $\{s_?\}$ (e.g., $\texttt{110101010}\dots$), is irreversibly erased, collapsing to the macrostate $\mathrm{Q}$ with the minimal binary program $\mathbf{s}^*$ (e.g., $\texttt{1101}$) of length $K(Q) = |\mathbf{s}^*|$, that runs on a universal computing machine $\mathcal{U}_{\operatorname{L}}$. This Landauer erasure over a characteristic time $\tau_0$ requires an action $A_L$ bounded by the symplectic quantum of action $\pi \hbar \ge A_L \ge k_{B}T\ln (2)K(Q)\tau_0$.}
+\end{figure}
+
+\section{Overview}
 
 \subsection*{The Generalized Scaling Law: Symplectic Holo-Dynamics}
 We propose that the total Landauer energy $E_L$ required to erase the informational state of a manifold is a function of its bulk action $\mathcal{A}$, modulated by the topological constraints of the \textbf{de Gosson quantum blob}. To maintain dimensional consistency, the action must be normalized against the fundamental symplectic unit $A_0 = \pi \hbar$. This yields a scaling law where energy is the product of the "blob count" raised to a dimensional index and a characteristic temporal power:
@@ -70,13 +77,6 @@ E_L \approx \frac{C(n)}{\tau} A_0 \left( \frac{\mathcal{A}}{A_0} \right)^{\frac{
     \item $n_\perp = n - 1/2$ is the \textbf{transverse reduction index}. This represents the effective dimensionality of the "information horizon" through which the bulk action must be processed during erasure.
     \item $C(n) = \frac{\pi^{n/2}}{2^n \Gamma(n/2 + 1)}$ is the \textbf{geometric coefficient} of a unit $n$-ball, representing the \textbf{symplectic packing efficiency}. It accounts for the volume lost when rigid, non-squeezable blobs are packed into a bounding hypercubic manifold.
 \end{itemize}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{erase.pdf}
-    \label{fig:quantum_blob}
-    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action $\delta_q < \Delta q : A = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, all surplus complexity from the many thermodynamically inaccessible microstates $q_?$ specified by a program $s_?$ (e.g., $\texttt{110101010}\dots$), is irreversibly erased, collapsing to the macrostate $\mathrm{Q}$ with the minimal program $\mathbf{s}^*$ (e.g., $\texttt{1101}$) of length $K(Q) = |\mathbf{s}^*|$, that runs on a universal computing machine $\mathcal{U}_{\operatorname{L}}$. This Landauer erasure over a characteristic time $\tau_0$ requires an action $A_L$ bounded by the quantum of action $\pi \hbar \ge A_L \ge k_{B}T\ln (2)K(Q)\tau_0$.}
-\end{figure}
 
 \begin{figure}[htbp]
     \centering
@@ -104,62 +104,45 @@ Coordinate: $q(t) = q_0 \mathcal{L}(t)$ \\
 Momentum: $p(t) = p_0 \mathcal{P}(t)$ \\
 Time: $t = t_0 \mathcal{T}$ \\
 Energy: $E = E_0 \mathcal{E}$ \\
-Characteristic Action: $A_0 = \frac{\pi}{4} q_0 p_0 = \pi \hbar$ \\
-Normalized Action: $\mathcal{A} = \mathcal{P}^2 + \mathcal{L}^2$ \\
+Quantum of Action: $A_0 = \pi \hbar$ \\
+Quantum of Action: $A_0 = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$ \\
 Action: $A = A_0 \mathcal{A}$ \\
-Hamiltonian: $\mathcal{H} = A f = E_0 \mathcal{A} = \pi \hbar\left(\mathcal{P}^2 + \mathcal{L}^2\right)f$
-Landauer Universal Computing Machine: $\mathcal{U}_{\operatorname{L}}$ \\
-Program Bit String: $s$ \\
-Minimal Program: $s^*$ \\
-Program Length: $|s|$ \\
-Kolmogorov Complexity: $\mathrm{K} = |s^*|$ \\
-Shannon Entropy: $\mathrm{H}$ \\
-Zurek Entropy: $\mathrm{S}= \mathrm{H} + \mathrm{K}$ \\
-Erasure: $\Omega(\mathrm{Q}) = |\{q_?\} \overset{\mathcal{U}_{\operatorname{L}}}{\mapsto} \mathrm{Q}|$ \\
-Halt Criteria: $|q_?-\mathrm{Q}| < \frac{\pi}{4} \mathcal{P}^{-1}$ \\
-Halt Criteria: $|q_?-\mathrm{Q}| < \mathcal{P}^{-1}$ \\
+Characteristic Action: $\frac{\pi}{4} q_0 p_0 \coloneq \pi \hbar$ \\
+Normalized Action: $\mathcal{A} = \mathcal{P}^2 + \mathcal{L}^2$ \\
+Hamiltonian: $\mathcal{H} = E_0 \mathcal{A} = \pi \hbar (\mathcal{P}^2 + \mathcal{L}^2) f$ \\
+Landauer Machine: $\mathcal{U}_{\mathrm{L}}$ \\
+Binary Program: $s$ \\
+Minimal Binary Program: $\mathbf{s^*}$ \\
+Binary Program Length: $K(\mathrm{Q}) = |\mathbf{s^*}|$ \\
+Erasure Mapping: $\mathcal{U}_{\mathrm{L}} : \{q_?\} \mapsto \mathrm{Q}$ \\
+Halt Criteria: $|q_? - \mathrm{Q}| < \mathcal{P}^{-1}$
 
 \subsection{The Canonical Flow}
 
 The resolution of a physical state is determined either by the probabilistic spread of its conjugate observables, $\sigma_{q}\sigma_{p} \ge \hbar/2$, or by its action boundary $A$ in phase space:
 
-$$A = \frac{\pi}{4} \Delta p \Delta q \ge \pi \hbar.$$
+$$A_0 = \frac{\pi}{4} \Delta p \Delta q = \pi \hbar.$$
 
-Within this hard action boundary $A$, the entropy of the state is physically constrained by the minimum symplectic volume $A = \pi \hbar$. Because all microstates $\mu_q = q_{0}q_{?}$ within this quantum of action must be operationally indistinguishable ($\delta_{q} < \Delta q \implies \frac{\pi}{4} \delta_{q} \Delta p < \pi \hbar$), it is a thermodynamic necessity that only the macrostate $q_{0}Q$ which maximizes system entropy by minimizing local complexity is physically possible: $\delta_{q} = q_{0}|q_{?} - Q|$. Expressed in terms of the quantum of action with $\Delta p = p_{0}\mathcal{P}$, we have:
+Within this hard action boundary $A$, the entropy of the state is physically constrained by the minimum symplectic volume $A_0 = \pi \hbar$. Because all microstates $\{\mu_q\} = \{q_{0}q_{?}\}$ within this quantum of action must be operationally indistinguishable ($\delta_{q} < \Delta q \implies \frac{\pi}{4} \delta_{q} \Delta p < \pi \hbar$), it is a thermodynamic necessity that only the macrostate $q_{0}\mathrm{Q}$ which maximizes system entropy by minimizing local complexity is physically possible: $\delta_{q} = q_{0}|q_{?} - \mathrm{Q}|$, where $q_{?}$ and $\mathrm{Q}$ are normalized and dimensionless. Defining the scale as $\Delta p = p_{0}\mathcal{P}$, we have:
 
-$$\left(\frac{\pi}{4} q_{0} p_{0}\right) |q_{?} - Q| \mathcal{P} < \pi \hbar.$$
+$$\left(\frac{\pi}{4} q_{0} p_{0}\right) |q_{?} - \mathrm{Q}| \mathcal{P} < \pi \hbar.$$
 
-Recognizing that the characteristic action of the system is $A_{0} = \frac{\pi}{4} q_{0} p_{0} = \pi \hbar$, we arrive at:
+Recognizing the characteristic action of the system is defined by $\frac{\pi}{4} q_{0} p_{0} \coloneq \pi \hbar$, we arrive at:
 
 \begin{equation}
-|q_{?} - Q| < \mathcal{P}^{-1}.
+|q_{?} - \mathrm{Q}| < \mathcal{P}^{-1}.
 \end{equation}
 
 This thermodynamic collapse is executed by a universal computing machine we call the Landauer eraser:
 
 \begin{equation}
-\mathcal{U}_{\mathrm{L}}(q_{?}) \mapsto Q
+\mathcal{U}_{\mathrm{L}}(\{q_{?}\}) \mapsto \mathrm{Q}
 \end{equation}
 
-which irreversibly erases the knowledge of the inaccessible microstates $\{q_{?} : A = \pi \hbar \}$, mapping them to the one minimal complexity state $K(Q) = |\mathbf{s^*}|$ defined by the minimal program $\mathbf{s^*}$, where $K(Q)$ is the Kolmogorov complexity and $|\mathbf{s^*}|$ is the length of the program's bit string.
+which irreversibly erases the algorithmic information of the inaccessible microstates $\{q_{?} : A_0 = \pi \hbar \}$, mapping them to the one minimal complexity state $K(\mathrm{Q}) = |\mathbf{s^*}|$ defined by the minimal program $\mathbf{s^*}$, where $K(\mathrm{Q})$ is the Kolmogorov complexity and $|\mathbf{s^*}|$ is the length of the program's bit string.
 
 
-\subsection{The Canonical Flow}
-
-The resolution of a physical state is determined either by the probabilistic spread of its conjugate observables, $\sigma _{q}\sigma _{p}\ge \hbar /2$, or by its action boundary $A$ in phase space
-
-$$A=\frac{\pi }{4}\Delta p\Delta q\ge \pi \hbar.$$
-
-Within this action boundary $A$, the entropy of the state is physically constrained by the minimum symplectic volume $A=\pi \hbar$. Because all microstates $\mu_q = q_{0}q_{?}$ within this quantum of action must be operationally indistinguishable $\delta _{q}<\Delta q\implies \frac{\pi }{4}\delta _{q}\Delta p<\pi \hbar$, it is a thermodynamic necessity that only the macrostate $q_{0} \mathrm{Q}$ that maximizes system entropy by minimizing local complexity is physically possible $\delta _{q}=q_{0}|q_{?}-\mathrm{Q}|$. Expressed in terms of the quantum of action with $\Delta p=p_{0}\mathcal{P}$ we have $\left(\frac{\pi }{4}q_{0}p_{0}\right)|q_{?}-\mathrm{Q}|\mathcal{P}<\pi \hbar.$ Recognizing that the characteristic action of the system is $A_{0} = \frac{\pi}{4}q_{0}p_{0} = \pi \hbar$, we arrive at:
-
-\begin{equation}
-|q_{?}-\mathrm{Q}|<\mathcal{P}^{-1}.
-\end{equation}
-
-This thermodynamic collapse is executed by a universal computing machine we call the Landauer eraser 
-\begin{equation}
-mathcal{U}_{\mathrm{L}}(q_?) \mapsto \mathrm{Q}
-\end{equation}, which irreversibly erases the knowledge of the inaccessible microstates $\{q_? : A = \pi \hbar \}$, mapping them to the one minimal complexity state $K(Q)=|\mathbf{s^{*}}|$ defined by the minimal program $\mathbf{s^{*}}$, where $K(Q)$ is Komogorov complexity and $|\mathbf{s^{*}}|$ is the length of the program's bit string.
+The bound $|q_{?} - \mathrm{Q}| < \mathcal{P}^{-1}$ establishes a fundamental algorithmic event horizon for the physical state. Within this framework, the normalized momentum $\mathcal{P}$ functions as a computational budget; higher momentum scales provide the necessary action to sustain the information density required for higher-resolution microstates. Conversely, when the work required to maintain the distinction between a microstate $q_{?}$ and its macrostate $\mathrm{Q}$ exceeds the available action, the Landauer eraser enforces a transition to the state of minimal algorithmic complexity. This thermodynamic collapse effectively truncates the bit-string representation of the state, mapping the inaccessible sub-resolution information to the minimal complexity program $\mathbf{s^*}$ consistent with the $A_0 = \pi \hbar$ boundary.
 
 \subsection*{Informational Substrate and the Universal Computer}
 
@@ -485,9 +468,9 @@ In this framework, physical action is the currency of information. The "knowabil
 d
 
 \section{Notes}
-1. Margolus-Levitin Theorem and the "Quantum Speed Limit" The most direct parallel is the Margolus-Levitin Theorem, which states that the time \(\tau \) to reach an orthogonal state is bounded by \(\tau \ge \frac{h}{4E}\). If we rearrange this as \(\frac{E\tau }{h}\ge \frac{1}{4}\), and recognize \(E\tau \) as a form of action (\(S\)), the theorem essentially says that you need at least a quarter-unit of action to perform "one bit" of state-change.Recent 2025 refinements to this theorem have extended these bounds to "arbitrary fidelity," confirming that the number of operations per second is strictly limited by the system's energy.
+1. Margolus-Levitin Theorem and the "Quantum Speed Limit" The most direct parallel is the Margolus-Levitin Theorem, which states that the time $\tau $ to reach an orthogonal state is bounded by $\tau \ge \frac{h}{4E}$. If we rearrange this as $\frac{E\tau }{h}\ge \frac{1}{4}$, and recognize $E\tau $ as a form of action ($S$), the theorem essentially says that you need at least a quarter-unit of action to perform "one bit" of state-change.Recent 2025 refinements to this theorem have extended these bounds to "arbitrary fidelity," confirming that the number of operations per second is strictly limited by the system's energy.
 
-2. Honoring Brocot: The "erasure" \(\mathcal{E}(x_?) = x\) is the process of several teeth mapping to the same "tick" of the clock.
+2. Honoring Brocot: The "erasure" $\mathcal{E}(x_?) = x$ is the process of several teeth mapping to the same "tick" of the clock.
 \section*{Unification of Symplectic Erasure and the Holographic Scaling of Action}
 
 \subsection*{Foundational Framework}
