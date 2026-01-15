@@ -41,7 +41,7 @@
 \title{Information Erasure Inside the Quantum of Action}
 
 \begin{abstract}
-By maximizing entropy through Landauer information erasure within de Gosson's quantum of action, we show that continuum states collapse into discrete observables. Numerical analysis confirms that this dynamic accurately reproduces key quantum phenomena. This work provides an algorithmic-geometric correspondence to quantum mechanics at the entropic limit of action.
+By maximizing entropy through Landauer information erasure within de Gosson's quantum of action, we show that continuum states collapse into discrete conjugate observables. Numerical analysis confirms that this dynamic accurately reproduces key quantum phenomena. This work provides an algorithmic-geometric correspondence to quantum mechanics at the entropic limit of action.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -67,6 +67,15 @@ Landauer erasure over a characteristic time $\tau_0$ requires an action  $A_L$ i
 k_{B}T\ln(2)K(\mathrm{Q})\tau_0 \le A_L \le \pi \hbar
 \end{equation}
 
+\begin{equation}
+|q_{?} - \mathrm{Q}| \le \mathcal{P}^{-1}.
+\end{equation}
+
+\begin{equation}
+|p_{?} - \mathrm{P}| \le \mathcal{Q}^{-1}.
+\end{equation}
+
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{landauer_momentum.pdf}
@@ -86,6 +95,28 @@ k_{B}T\ln(2)K(\mathrm{Q})\tau_0 \le A_L \le \pi \hbar
     \caption{\textbf{Conjugate quanta of action.}}
     \label{fig:conjugate_quanta}
 \end{figure}
+
+\section{The Algorithmic Necessity of Conjugate Pairs}
+
+\subsection{The Entropic Conflict}
+The core equation sets a strict cap on how much algorithmic complexity a single "action blob" can contain:
+\[k_{B}T\ln(2)K(\mathrm{Q})\tau_0 \le A_L \le \pi \hbar\]
+If one attempts to place all information for both position and momentum into one blob, they run into the fundamental limit imposed by the Planck constant $\hbar$. A single quantum blob in phase space represents an absolute minimum volume, leaving no room for precise conjugate values.
+
+\subsection{The Algorithmic-Geometric Solution}
+To maintain a consistent physical description (which allows both position-space and momentum-space realities), the system must utilize two linked quanta of action---a \textbf{conjugate pair}.
+\begin{itemize}
+    \item \textbf{The "Q Blob" (Position focus):} This blob, which appears horizontally elongated in the attached plots, prioritizes the visibility of position information ($\mathrm{Q}$) by minimizing the information content (complexity $K(\mathrm{P})$) of its conjugate momentum. It satisfies the inequality:
+    \[|p_{?} - \mathrm{P}| \le \mathcal{Q}^{-1}\]
+    This represents the system when one observes its location.
+
+    \item \textbf{The "P Blob" (Momentum focus):} The vertically elongated blob is its partner. It prioritizes momentum information ($\mathrm{P}$) at the expense of position complexity, satisfying the inequality:
+    \[|q_{?} - \mathrm{Q}| \le \mathcal{P}^{-1}\]
+    This represents the system when one measures its velocity/momentum.
+\end{itemize}
+
+The series of plots illustrates this: as the "transition" progresses (representing energy levels of a Quantum Harmonic Oscillator), the two blobs morph while maintaining their duality, confirming their linked nature as an algorithmic necessity.
+
 
 \section{Notation}
 The variables used primarily throughout this manuscript are dimensionless values—such as coordinate $\mathcal{L}$, momentum $\mathcal{P}$, energy $\mathcal{E}$, and time $\mathcal{T}$—normalized to their characteristic base units ($q_0, p_0, E_0, t_0$). We define the fundamental \textit{quantum of action} as $\pi \hbar = \frac{\pi}{4} q_0 p_0 = \pi \hbar$, which establishes the phase-space resolution of the system. While the base units ($q_0, p_0$) define the system's characteristic scales, the dynamic state resolutions ($\Delta q, \Delta p$) are captured by the dimensionless parameters $\mathcal{L}$ and $\mathcal{P}$.
