@@ -41,7 +41,7 @@
 \title{Information Erasure Inside the Quantum of Action}
 
 \begin{abstract}
-By maximizing entropy through Landauer information erasure within de Gosson's quantum of action, we show that continuum states collapse into discrete conjugate observables. Numerical analysis confirms that this dynamic accurately reproduces key quantum phenomena. This work provides an algorithmic-geometric correspondence to quantum mechanics at the entropic limit of action.
+By maximizing entropy through Landauer information erasure within de Gosson's quantum of action, we show that continuum states collapse into discrete conjugate observables. Numerical results confirm that these constraints accurately reproduce key quantum phenomena. This work provides an algorithmic-geometric correspondence to quantum mechanics at the entropic limit of action.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -55,7 +55,7 @@ By maximizing entropy through Landauer information erasure within de Gosson's qu
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action defined by $\delta_q \le \Delta q$ such that $A_L = \frac{\pi}{4} \Delta q \Delta p \le \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0}$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_0$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $\pi \hbar$: $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar$.}
+    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action defined by $A_L = \frac{\pi}{4} \Delta q \Delta p \le \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0} : |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_0$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $\pi \hbar$: $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar$.}
     \label{fig:erase}
 \end{figure}
 
@@ -68,13 +68,12 @@ k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar
 \end{equation}
 
 \begin{equation}
-q = q_0 |q_{?} - \mathbf{Q_0}| \le \mathcal{P}^{-1}.
+|q_{?} - \mathbf{Q_0}| \le \mathcal{P}^{-1}.
 \end{equation}
 
 \begin{equation}
-p = p_0 |p_{?} - \mathbf{P_0}| \le \mathcal{Q}^{-1}.
+|p_{?} - \mathbf{P_0}| \le \mathcal{Q}^{-1}.
 \end{equation}
-
 
 \begin{figure}[htbp]
     \centering
@@ -96,7 +95,7 @@ p = p_0 |p_{?} - \mathbf{P_0}| \le \mathcal{Q}^{-1}.
     \label{fig:conjugate_quanta}
 \end{figure}
 
-\section{The Algorithmic Necessity of Conjugate Pairs}
+\section{Algorithmic Necessity of Conjugate Action Quanta}
 
 \subsection{The Entropic Conflict}
 The core equation sets a strict cap on how much algorithmic complexity a single "action blob" can contain:
