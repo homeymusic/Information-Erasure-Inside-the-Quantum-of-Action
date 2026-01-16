@@ -55,25 +55,39 @@ By maximizing entropy through Landauer information erasure within de Gosson's qu
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action defined by $A_L = \frac{\pi}{4} \Delta q \Delta p \le \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0} : |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_0$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $\pi \hbar$: $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar$.}
+    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action defined by $A_L = \frac{\pi}{4} \Delta q \Delta p \le \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0} : |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $A_L \le \pi \hbar$.}
     \label{fig:erase}
 \end{figure}
 
 \section{Overview}
 
-Landauer erasure over a characteristic time $\tau_0$ requires an action  $A_L$ inside the symplectic quantum of action: 
+Landauer erasure over a characteristic time $\tau_L$ requires an action  $A_L$ bounded by the symplectic quantum of action,
 
 \begin{equation}
-k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar
+k_{B}T\ln(2)K(\mathbf{Q_0}, \mathbf{P_0})\tau_L \le A_L \le \pi \hbar,
 \end{equation}
+
+which in turns requires the bifurcation of the action into a conjugate action pair,
 
 \begin{equation}
 |q_{?} - \mathbf{Q_0}| \le \mathcal{P}^{-1}.
 \end{equation}
 
+and
+
 \begin{equation}
-|p_{?} - \mathbf{P_0}| \le \mathcal{Q}^{-1}.
+|p_{?} - \mathbf{P_0}| \le \mathcal{Q}^{-1},
 \end{equation}
+
+where $K(\mathbf{Q_0}, \mathbf{P_0}) = |\mathbf{s_{Q_0}}| + |s_{P_0}|$.
+
+The Landauer erasure time \(\tau _{L}\) for the ground state \(K(\mathbf{Q}_{\mathbf{0}})=1\) is 
+
+\begin{equation}
+\tau _{L}\le \frac{\pi \hbar }{k_{B}T\ln (2)}=\frac{\pi }{\ln (2)}\tau _{\hbar },
+\end{equation}
+
+where \(\tau _{\hbar }=\frac{\hbar }{k_{B}T}\) is the Planckian dissipation time. Here, the factor of \(\pi \) accounts for the elliptical geometry of the quantum of action, while \(\ln (2)\) represents the entropic cost of a single bit erasure. This establishes that the erasure time is a specific algorithmic-geometric scaling of the absolute quantum-thermal speed limit.
 
 \begin{figure}[htbp]
     \centering
@@ -95,12 +109,32 @@ k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar
     \label{fig:conjugate_quanta}
 \end{figure}
 
-\section{Algorithmic Necessity of Conjugate Action Quanta}
+\section{The Algorithmic Necessity of Conjugate Action Quanta}
 
 \subsection{The Entropic Conflict}
 The core equation sets a strict cap on how much algorithmic complexity a single "action blob" can contain:
-\[k_{B}T\ln(2)K(\mathbf{Q_0})\tau_0 \le A_L \le \pi \hbar\]
-If one attempts to place all information for both position and momentum into one blob, they run into the fundamental limit imposed by the Planck constant $\hbar$. A single quantum blob in phase space represents an absolute minimum volume, leaving no room for precise conjugate values.
+\[k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar\]
+If one attempts to place all information for both position and momentum into one blob, they run into the fundamental limit imposed by the Planck constant $\hbar$. A single quantum blob in phase space represents an absolute minimum volume, leaving no room for precise conjugate values.m
+
+\subsection{The Additivity of Action-Information and the Conjugate Leap}
+
+By defining the joint complexity of the system as the sum of independent binary programs on the universal Landauer machine $\mathcal{U}_{\mathrm{L}}$, we establish that $K(\mathbf{Q_0}, \mathbf{P_0}) = |\mathbf{s_{Q_0}}| + |\mathbf{s_{P_0}}|$. Consequently, the Landauer bound on the characteristic erasure time $\tau_L$ within the symplectic quantum of action $A_L \le \pi \hbar$ is expressed as:
+
+\begin{equation}
+k_{B}T\ln(2) \left( |\mathbf{s_{Q_0}}| + |\mathbf{s_{P_0}}| \right) \tau_L \le \pi \hbar.
+\end{equation}
+
+This identity reveals that the "leap" from a single microstate continuum to a conjugate pair of observables is an algorithmic necessity. Because the information budget for a discrete reality is limited by the \textbf{symplectic capacity} \cite{deGosson2011} of the ``quantum blob'' ($\pi \hbar$), the system cannot resolve both position and momentum within a single geometric orientation. 
+
+To maintain the total action while reducing complexity through \textbf{Landauer erasure} \cite{Landauer1961}, the universe bifurcates the action into a \textbf{conjugate pair}:
+\begin{itemize}
+    \item \textbf{The Q-Blob:} Minimizes position uncertainty by utilizing the algorithmic ``slack'' of the conjugate momentum program.
+    \item \textbf{The P-Blob:} Minimizes momentum uncertainty by utilizing the algorithmic ``slack'' of the conjugate position program.
+\end{itemize}
+
+This duality effectively maps the bulk algorithmic information into the discrete, erasable bits of our observable world, ensuring that the erasure time adheres to the absolute \textbf{Planckian dissipation limit} $\tau_{\hbar} = \frac{\hbar}{k_B T}$, scaled by the factor $\frac{\pi}{\ln(2)}$ which bridges de Gosson's elliptical geometry with thermodynamic entropy.
+
+
 
 \subsection{The Algorithmic-Geometric Solution}
 To maintain a consistent physical description (which allows both position-space and momentum-space realities), the system must utilize two linked quanta of action---a \textbf{conjugate pair}.
