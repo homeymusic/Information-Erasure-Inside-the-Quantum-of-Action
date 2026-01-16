@@ -55,19 +55,23 @@ By maximizing entropy through Landauer information erasure within de Gosson's qu
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{\textbf{Erasure within the quantum of action} (schematic). Within the symplectic quantum of action defined by $A_L = \frac{\pi}{4} \Delta q \Delta p \le \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0} : |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $A_L \le \pi \hbar$.}
+    \caption{\textbf{Erasure within a quantum of action} (schematic). Within a symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$ for the q-coordinate—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0} : |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar$.}
     \label{fig:erase}
 \end{figure}
 
 \section{Overview}
 
-Landauer erasure over a characteristic time $\tau_L$ requires an action  $A_L$ bounded by the symplectic quantum of action,
+The de Gosson quantum of action is defined as 
+
+$$A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$$
+
+Landauer erasure over a characteristic time $\tau_L$ requires an action $A_L$ bounded by the symplectic quantum of action,
 
 \begin{equation}
-k_{B}T\ln(2)K(\mathbf{Q_0}, \mathbf{P_0})\tau_L \le A_L \le \pi \hbar,
+k_{B}T\ln(2)K(\mathbf{Q_0}, \mathbf{P_0})\tau_L \le A_L \le A_{d \Gamma} = \pi \hbar,
 \end{equation}
 
-which in turns requires the bifurcation of the action into a conjugate action pair,
+and the limited action capacity of one quantum of action $A_{d\Gamma}$ requires the bifurcation of the action into a conjugate action pair,
 
 \begin{equation}
 |q_{?} - \mathbf{Q_0}| \le \mathcal{P}^{-1}.
@@ -81,13 +85,18 @@ and
 
 where $K(\mathbf{Q_0}, \mathbf{P_0}) = |\mathbf{s_{Q_0}}| + |s_{P_0}|$.
 
-The Landauer erasure time \(\tau _{L}\) for the ground state \(K(\mathbf{Q}_{\mathbf{0}})=1\) is 
+and the sum of those quanta gives the total action of the sytem
+
+$$A_\Gamma = \sum A_{d \Gamma}.$$
+
+
+The Landauer erasure time $\tau _{L}$ for the ground state $K(\mathbf{Q}_{\mathbf{0}})=1$ is 
 
 \begin{equation}
 \tau _{L}\le \frac{\pi \hbar }{k_{B}T\ln (2)}=\frac{\pi }{\ln (2)}\tau _{\hbar },
 \end{equation}
 
-where \(\tau _{\hbar }=\frac{\hbar }{k_{B}T}\) is the Planckian dissipation time. Here, the factor of \(\pi \) accounts for the elliptical geometry of the quantum of action, while \(\ln (2)\) represents the entropic cost of a single bit erasure. This establishes that the erasure time is a specific algorithmic-geometric scaling of the absolute quantum-thermal speed limit.
+where $\tau _{\hbar }=\frac{\hbar }{k_{B}T}$ is the Planckian dissipation time. Here, the factor of $\pi $ accounts for the elliptical geometry of the quantum of action, while $\ln (2)$ represents the entropic cost of a single bit erasure. This establishes that the erasure time is a specific algorithmic-geometric scaling of the absolute quantum-thermal speed limit.
 
 \begin{figure}[htbp]
     \centering
