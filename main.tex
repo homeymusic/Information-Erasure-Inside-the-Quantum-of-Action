@@ -41,7 +41,7 @@
 \title{Information Erasure Inside the Quantum of Action}
 
 \begin{abstract}
-By maximizing entropy through Landauer information erasure within de Gosson's quantum of action, we show that continuum states collapse into discrete conjugate observables. Numerical results confirm that these constraints reflect the experimental distributions of quantum phenomena, providing a discrete resolution that extends beyond the predictions of Schrödinger formalism. At the entropic limit of action, this work provides a thermodynamic-geometric correspondence to standard quantum mechanics.
+By maximizing entropy through Landauer information erasure within de Gosson's quantum of action, we show that continuum states collapse into discrete conjugate observables. Numerical results confirm that these constraints reflect the experimental distributions of quantum phenomena, revealing an underlying microstate distribution where Schrödinger-eigenstates appear as accessible configurations rather than privileged solutions. At the entropic limit of action, this work provides a thermodynamic-geometric correspondence to standard quantum mechanics.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -81,6 +81,26 @@ For a macroscopic system, $N_\Gamma \gg 1$, whereas the ground state is reached 
 \label{fig:erase}
 \end{figure}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{landauer_squeeze.pdf}
+    \caption{\textbf{Landauer action versus de Gosson squeeze.}}
+    \label{fig:landauer_squeeze}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{distributions.pdf}
+    \caption{\textbf{Quantum harmonic oscillator coordinate distributions before, at, and after Landauer action phase transitions.}}
+    \label{fig:distributions}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{conjugate_quanta.pdf}
+    \caption{\textbf{Conjugate quanta of action.}}
+    \label{fig:conjugate_quanta}
+\end{figure}
 
 \subsection{The Entropic Conflict}
 The core constraint sets a strict cap on the thermodynamic complexity a single ``action blob'' can contain:
@@ -226,27 +246,6 @@ The Landauer erasure time $\tau _{L}$ for the ground state $K(\mathbf{Q}_{\mathb
 
 where $\tau _{\hbar }=\frac{\hbar }{k_{B}T}$ is the Planckian dissipation time. Here, the factor of $\pi $ accounts for the elliptical geometry of the quantum of action, while $\ln (2)$ represents the entropic cost of a single bit erasure. This establishes that the erasure time is a specific thermodynamic-geometric scaling of the absolute quantum-thermal speed limit.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{landauer_squeeze.pdf}
-    \caption{\textbf{Landauer action versus de Gosson squeeze.}}
-    \label{fig:landauer_squeeze}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{distributions.pdf}
-    \caption{\textbf{Quantum harmonic oscillator coordinate distributions before, at, and after Landauer action phase transitions.}}
-    \label{fig:distributions}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{conjugate_quanta.pdf}
-    \caption{\textbf{Conjugate quanta of action.}}
-    \label{fig:conjugate_quanta}
-\end{figure}
-
 \section{The Thermodynamic Necessity of Conjugate Action Quanta}
 
 \subsection{The Entropic Conflict}
@@ -271,8 +270,6 @@ To maintain the total action while reducing complexity through \textbf{Landauer 
 \end{itemize}
 
 This duality effectively maps the bulk thermodynamic information into the discrete, erasable bits of our observable world, ensuring that the erasure time adheres to the absolute \textbf{Planckian dissipation limit} $\tau_{\hbar} = \frac{\hbar}{k_B T}$, scaled by the factor $\frac{\pi}{\ln(2)}$ which bridges de Gosson's elliptical geometry with thermodynamic entropy.
-
-
 
 \subsection{The thermodynamic-Geometric Solution}
 To maintain a consistent physical description (which allows both position-space and momentum-space realities), the system must utilize two linked quanta of action---a \textbf{conjugate pair}.
@@ -314,6 +311,17 @@ On the thermodynamic side, the universe discards a string length $\Delta I = |s_
     \delta_q = q_{?} - \mathbf{Q_0}
 \end{equation}
 This mapping identifies the Heisenberg Uncertainty not as a limit of nature's "knowledge," but as the manifestation of the Landuaer eraser projected into the physical world.
+
+% --- Conceptual Translation: Detroit speak to Physics Formalism ---
+
+\begin{quotation}
+\noindent \textbf{Conceptual Framework:} 
+Our computational simulations reveal state distributions characterized by node counts that coincide with the energy bands predicted by canonical wave mechanics; however, these states are neither statistically favored nor exclusive within the model. Instead, they emerge as a subset of manifold configurations accessible under the specific phase-space volume dictated by the system’s action.
+
+\medskip
+
+In this framework, analyzing our numerical output is functionally equivalent to the inferential processes of quantum state tomography. Crucially, our results are derived solely from classical statistical mechanics---utilizing a Maxwell--Boltzmann--Planck thermodynamic foundation---precluding the need for non-local entanglement or wavefunction collapse. Consequently, we propose that the physical vacuum provides no privileged status to Schr\"{o}dinger-eigenstate predictions, which instead appear as specific manifestations within a broader thermodynamic distribution of action-constrained microstates.
+\end{quotation}
 
 \section{Notation}
 The variables used primarily throughout this manuscript are dimensionless values—such as coordinate $\mathcal{L}$, momentum $\mathcal{P}$, energy $\mathcal{E}$, and time $\mathcal{T}$—normalized to their characteristic base units ($q_0, p_0, E_0, t_0$). We define the fundamental \textit{quantum of action} as $\pi \hbar = \frac{\pi}{4} q_0 p_0 = \pi \hbar$, which establishes the phase-space resolution of the system. While the base units ($q_0, p_0$) define the system's characteristic scales, the dynamic state resolutions ($\Delta q, \Delta p$) are captured by the dimensionless parameters $\mathcal{L}$ and $\mathcal{P}$.
