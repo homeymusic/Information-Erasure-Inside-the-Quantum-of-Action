@@ -54,27 +54,15 @@ By maximizing entropy through Landauer information erasure within de Gosson's qu
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{\textbf{Erasure within a conjugate-bounded quantum of action} (schematic). 
-Within a symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, 
-the binary sequences $\{s_?\}$ of operationally indistinguishable microstates $\{q_?\}$—bounded 
-by the dimensionless conjugate units $\mathcal{P}=p/p_0$—are irreversibly erased by 
-thermodynamic necessity. The microstates are mapped by the optimal encoder 
-$\mathbf{s_0} = \mathrm{Enc}_0(q_?, \mathcal{P})$ to the macrostate 
-$\mathbf{Q_0}\colon |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$, where $\mathbf{s_0}$ 
-is the minimal binary string of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$ required to run 
-the Landauer erasing machine $\mathcal{U}_{\mathrm{L}}$. This erasure over a characteristic 
-time $\tau_L$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum 
-of action: $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar$.}
+        \caption{\textbf{Erasure within a conjugate-bounded quantum of action} (schematic). Within a symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, the binary sequences $\{s_?\}$ (e.g., \texttt{110101010\dots}) of the operationally indistinguishable microstates $\{q_?\}$—bounded by the dimensionless conjugate units $\mathcal{P}=p/p_0$—are irreversibly erased by thermodynamic necessity. The indistinguishable microstates are collapsed via the optimal encoder 
+$\mathrm{Enc}_{0,q}(q_?, \mathcal{P}) \mapsto \mathbf{s_{0,q}}, \mathbf{Q_0}$ to the macrostate $\mathbf{Q_0}\colon |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary string $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a Landauer erasing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar$.}
+
+
+
 \label{fig:erase}
 \end{figure}
 
 \section{Overview}
-
-$$\mathbf{s_0} = \mathrm{Enc}(q_?, \mathcal{P}) \quad \text{where} \quad \mathrm{Enc} \colon \Gamma \times \mathbb{R} \to \{0,1\}^*$$
-
-
-     Within a symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, the algorithmic information of the operationally indistinguishable microstates $\{q_?\}$ for the q-coordinate—defined in dimensionless conjugate units $\mathcal{P}=p/p_0$—specified by binary programs $\{s_?\}$ (e.g., \texttt{110101010\dots})—is irreversibly erased by thermodynamic necessity. The indistinguishable microstates collapse to the macrostate $\mathbf{Q_0}\colon |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary program $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a universal computing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}}$ bounded by the symplectic quantum of action $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar$.
-
 
 The characteristic action (facilitating dimensionless, normalized units) is defined as 
 \begin{equation}
@@ -121,6 +109,71 @@ To maintain the total action while reducing complexity through \textbf{Landauer 
 \end{itemize}
 
 This duality maps the bulk thermodynamic information into the discrete, erasable bits of our observable world, ensuring the erasure time adheres to the absolute \textbf{Planckian dissipation limit} $\tau_{\hbar} = \frac{\hbar}{k_B T}$, scaled by the geometric factor $\frac{\pi}{\ln(2)}$.
+
+\section{The Encoder}
+
+To distinguish the creation of information from its execution on the universal machine $\mathcal{U}_L$, we define an \textbf{Optimal Encoder} $\mathrm{Enc}_0$. This agent acts as a path-finding function on the Stern-Brocot tree $\operatorname{SB}$, mapping indistinguishable microstates to their most parsimonious representations.
+
+The encoding process follows the conjugate symmetry of the symplectic phase space $\Gamma$:
+
+$$
+\mathrm{Enc}_{0,q}(q_?, \mathcal{P}) \mapsto \mathbf{s_{0,q}}, \mathbf{Q_0}
+$$
+
+\begin{align}
+\mathrm{Enc}_{0,q}(q_?, \mathcal{P}) &\mapsto \langle \mathbf{s_{0,q}} \cong \mathbf{Q_0} \rangle \\
+\mathrm{Enc}_{0,p}(p_?, \mathcal{Q}) &\mapsto \langle \mathbf{s_{0,p}} \cong \mathbf{P_0} \rangle
+\end{align}
+
+\noindent where:
+\begin{itemize}
+    \item $\mathrm{Enc}_0$: The \textbf{Optimal Agent} or mapping function (AIT: $E^*$).
+    \item $q_?, p_?$: The raw \textbf{microstates} within the symplectic quantum of action $A_{d\Gamma}$.
+    \item $\mathcal{P}, \mathcal{Q}$: The \textbf{boundary constraints} acting as auxiliary information or priors.
+    \item $\mathbf{s_{0,q}}, \mathbf{s_{0,p}}$: The \textbf{minimal binary programs} (bitstrings) of length $K(\mathbf{Q_0})$ and $K(\mathbf{P_0})$.
+    \item $\mathbf{Q_0}, \mathbf{P_0}$: The \textbf{macrostates} resulting from the action of $\mathcal{U}_L$ on the programs.
+    \item $\cong$: The \textbf{isomorphism} between the algorithmic description (program) and the physical state (geometry).
+\end{itemize}
+
+Consistent with the \textit{Source Coding Theorem} and the work of Li and Vitányi, the encoder $\mathrm{Enc}_0$ is defined by its ability to reach the \textbf{Kolmogorov limit} where the program length $|\mathbf{s_0}|$ equals the algorithmic complexity of the macrostate. The subsequent Landauer erasure of $\mathbf{s_0}$ by the machine $\mathcal{U}_L$ accounts for the thermodynamic cost associated with the collapse of the microstate set $\{q_?\}$ to the singular representation $\mathbf{Q_0}$.
+
+
+\begin{align}
+\mathrm{Enc}_{0,q}(q_?, \mathcal{P}) &\mapsto \langle \mathbf{s_{0,q}} \cong \mathbf{Q_0} \rangle \\
+\mathrm{Enc}_{0,p}(p_?, \mathcal{Q}) &\mapsto \langle \mathbf{s_{0,p}} \cong \mathbf{P_0} \rangle
+\end{align}
+
+\section{Algorithmic Uncertainty and Joint Complexity}
+
+The relationship between the conjugate programs $\mathbf{s_{0,q}}$ and $\mathbf{s_{0,p}}$ is governed by the \textbf{algorithmic distance} $D$ and the total information content required to describe the symplectic state.
+
+\subsection*{1. Algorithmic Distance}
+The distance between the position and momentum programs is defined by the length of the shortest program that transforms one into the other:
+\begin{equation}
+    D(\mathbf{s_{0,q}}, \mathbf{s_{0,p}}) = \max\{ K(\mathbf{s_{0,q}} | \mathbf{s_{0,p}}), K(\mathbf{s_{0,p}} | \mathbf{s_{0,q}}) \}
+\end{equation}
+On the \textbf{Stern-Brocot tree} ($\operatorname{SB}$), this corresponds to the number of tree-traversal steps (branch shifts) required to move from node $\mathbf{Q_0}$ to node $\mathbf{P_0}$.
+
+\subsection*{2. The Joint Complexity Bound}
+By the \textbf{Invariance Theorem}, the joint description of the conjugate pair is bounded by the log-volume of the symplectic quantum of action $A_{d\Gamma}$:
+\begin{equation}
+    K(\mathbf{s_{0,q}}, \mathbf{s_{0,p}}) \ge \log_2 \left( \frac{A_{d\Gamma}}{\pi \hbar} \right) + C
+\end{equation}
+This implies that the total bit-depth of the encoder $\mathrm{Enc}_0$ is constrained; increasing the precision (length) of $\mathbf{s_{0,q}}$ necessarily limits the available information for $\mathbf{s_{0,p}}$ to remain within the same symplectic blob.
+
+\subsection*{3. Symplectic Mutual Information}
+The information shared between the conjugate bases is given by:
+\begin{equation}
+    I(\mathbf{s_{0,q}} : \mathbf{s_{0,p}}) = K(\mathbf{s_{0,q}}) + K(\mathbf{s_{0,p}}) - K(\mathbf{s_{0,q}}, \mathbf{s_{0,p}})
+\end{equation}
+This \textbf{Mutual Information} quantifies the degree of redundancy provided by the boundary conditions $\mathcal{P}$ and $\mathcal{Q}$.
+
+\subsection*{Summary for Implementation}
+\begin{itemize}
+    \item \textbf{Isomorphism:} Distance in bit-space (AIT) $\cong$ distance in phase-space (Geometry).
+    \item \textbf{SB Traversal:} Moving between conjugates is a \textbf{path-switching} operation on the tree.
+    \item \textbf{Landauer Cost:} The total action $A_L$ must account for the erasure of the \textbf{joint complexity} $K(\mathbf{s_{0,q}}, \mathbf{s_{0,p}})$.
+\end{itemize}
 
 \section{de Gosson}
 
