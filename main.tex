@@ -54,19 +54,11 @@ By maximizing entropy through Landauer information erasure within de Gosson's qu
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{\textbf{Erasure within a symplectic quantum of action} (schematic). Within a symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, the binary sequences $\{s_?\}$ (e.g., \texttt{110101010\dots}) of the operationally indistinguishable microstates $\{q_?\}$—bounded by the dimensionless conjugate units $\mathcal{P}=p/p_0$—are irreversibly erased by thermodynamic necessity. The indistinguishable microstates are collapsed via the optimal encoder $\mathrm{Enc}_{0,q}(q_?, \mathcal{P}) \mapsto \mathbf{s_{0,q}}, \mathbf{Q_0}$ to the macrostate $\mathbf{Q_0}\colon |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ defined by the minimal binary string $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a Landauer erasing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}} = \frac{\pi}{4} \delta_q \Delta p \le A_{d\Gamma}$ bounded by the symplectic quantum of action $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar$.}
+    \caption{\textbf{Erasure within a symplectic quantum of action} (schematic). Within the symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, the operationally indistinguishable microstates $\{q_?\}$ encoded as binary sequences $\{s_?\}$ (e.g., \texttt{11010101})—bounded by the dimensionless conjugate $1/\mathcal{P}=p_0/p$—are irreversibly erased by thermodynamic necessity. The indistinguishable microstates are collapsed to the macrostate $\mathbf{Q_0}\colon |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ encoded as the minimal binary string $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$, running on a Landauer erasing machine $\mathcal{U}_{\mathrm{L}}$. This Landauer erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}} = \frac{\pi}{4} \delta_q \Delta p \le \pi \hbar$ bounded by the symplectic quantum of action $k_{B}T\ln(2)K(\mathbf{Q_0})\tau_L \le A_L \le \pi \hbar$.}
 \label{fig:erase}
 \end{figure}
 
 \section{Overview}
-
-$A_L = \oint_{\gamma} p \, dq \approx \sum_{i=1}^{K(\mathbf{Q_0})} \delta p_i \delta q_i$
-
-$A_L = \eta \cdot (\delta_q \cdot \delta_p) \cdot \tau_L / \tau_{switch}
-$
-
-$A_L = \int_0^{\tau_L} \left( \sum_{j=1}^{K(\mathbf{Q_0})} \dot{q}_j p_j \right) dt = K(\mathbf{Q_0}) \cdot a_0$
-
 
 The characteristic action (facilitating dimensionless, normalized units) is defined as 
 \begin{equation}
