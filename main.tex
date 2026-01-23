@@ -54,111 +54,65 @@ By maximizing entropy through Landauer information erasure inside de Gosson's qu
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-
-\caption{\textbf{Information erasure inside the quantum of action} (schematic in normalized units $\mu_q=q_0 q_{?}$, $q=q_0\mathbf{Q_0}$, $\Delta p= 2p_0\mathcal{P}$, $\Delta q = 2q_0/\mathcal{P}$). Within the symplectic quantum of action $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, binary sequences $\{s_{?}\}$ (e.g., \texttt{11010101}) represent operationally indistinguishable microstates $\{q_{?}\}$. Landauer erasure truncates these high-resolution sequences to a minimal binary sequence $\mathbf{s}^{*}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q}^{*})=|\mathbf{s}^{*}|$. This process effectively coarse-grains the information, causing the underlying microstates to collapse into the macrostate $\mathbf{Q}^{*}$ where the quantum fluctuation $|\delta_{q}|$ is bounded by the coordinate uncertainty $\Delta q$. This establishes that information resolution is fundamentally limited by the symplectic action $\pi \hbar$. Consequently, the conversion of lost computational degrees of freedom into thermal entropy over the orthogonality time $\tau_{\perp}$ defines the Landauer action $A_L = K(\mathbf{Q}^{*},\mathbf{P}^{*}) \ln(2) k_{B} T \tau_\perp$, requiring that the erasure action $A_{\mathrm{erase}}=\frac{\pi}{4}|\delta_{q}|\Delta p$ be constrained by Landauer’s principle from below and de Gosson's geometric boundary from above: $A_L \le A_{\mathrm{erase}} \le A_{d\Gamma} = \pi \hbar$.}
-
-
+    \caption{\textbf{Information erasure inside the quantum of action} (schematic in normalized units $\mu_q=q_0 q_{?}$, $q=q_0\mathbf{Q_0}$, $\Delta p= 2p_0\mathcal{P}$, $\Delta q = 2q_0/\mathcal{P}$). Within the symplectic quantum of action $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, binary sequences $\{s_{?}\}$ represent operationally indistinguishable microstates $\{q_{?}\}$. Landauer erasure truncates these high-resolution sequences to a minimal binary sequence $\mathbf{s}^{*}$ of prefix-free length $\ell(\mathbf{s}^{*}) = C(\mathbf{Q}^{*})$. This process effectively coarse-grains the information, causing the underlying microstates to collapse into the macrostate $\mathbf{Q}^{*}$ where the quantum fluctuation $|\delta_{q}|$ is bounded by the coordinate uncertainty $|\delta_{q}| \le \Delta q$. Consequently, the conversion of lost computational degrees of freedom into thermal entropy over the orthogonality time $\tau_{\perp}$ defines the Landauer action $A_L = C(\mathbf{Q}^{*},\mathbf{P}^{*}) \ln(2) k_{B} T \tau_\perp$, requiring that the erasure action $A_{\mathrm{erase}}=\frac{\pi}{4}|\delta_{q}|\Delta p$ be constrained by Landauer’s principle from below and de Gosson's geometric boundary from above: $A_L \le A_{\mathrm{erase}} \le A_{d\Gamma} = \pi \hbar$.}
 \label{fig:erase}
 \end{figure}
 
 \section{Overview}
 
-Landauer Action
+This is the overview. 
 
-$$
-A_L = k_B T \ln(2) K(Q^*, P^*) \tau_\perp, \quad K(Q^*, P^*) = |s^*_Q| + |s^*_P|
-$$
+\subsection{Landauer Action and Information Capacity}
 
-Action of Erasure
+The Landauer action is defined by the algorithmic information capacity $C(Q^*, P^*)$,
+isomorphically mapped to the total bit-length $\ell$ of the identifying binary strings:
 
-$$
-A_{\mathrm{erase}} = \frac{\pi}{4} q_0 p_0 |q_?-Q^*||p_? - P^*|
-$$
-
-
-De Gosson's Quantum of Action
-
-$$
-A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar
-$$
-
-Erasure with the Quantum of Action
-
-$$
-A_L \le A_{\mathrm{erase}} \le A_{d\Gamma}
-$$
-
-Margolus-Levitin Orthogonality Time
-
-$$
-\tau_\perp T = \frac{\pi \hbar}{2 \ln(2) k_B}
-$$
-
-$$
-\tau_\perp \le \frac{h}{4E}, \quad E = k_B T \ln(2)
-$$
-
-Bekenstein Bound for Quantum of Action
-
-$$
-S \le \frac{2 \pi k_B R E}{\hbar c}
-$$
-
-$$
-R = c \tau_\perp = c \frac{\pi \hbar}{2 \ln(2) k_B}
-$$
-
-$$
-E =  k_B T \ln(2)
-$$
-
-$$
-S \le \frac{2 \pi k_B}{\hbar c} c \frac{\pi \hbar}{2 \ln(2) k_B}  k_B T \ln(2) = \pi ^2 \ \text{bits}
-$$
-
-Bekenstein Bound for Conjugate Action Quanta Pair
-
-$$
-S = S_Q + S_P = 2 \pi^2
-$$
-
-$$
-S \le \frac{2 \pi k_B R E}{\hbar c}
-$$
-
-$$
-R = c \tau_\perp = c \frac{\pi \hbar}{2 \ln(2) k_B}
-$$
-
-$$
-E =  k_B T \ln(2)
-$$
-
-$$
-S \le \frac{2 \pi k_B}{\hbar c} c \frac{\pi \hbar}{2 \ln(2) k_B}  k_B T \ln(2) = \pi ^2 \ \text{bits}
-$$
-
-
-The characteristic action (facilitating dimensionless, normalized units) is defined as 
 \begin{equation}
-    A_0 = q_0 p_0 = \hbar.
+A_L = k_B T \ln(2) C(Q^*, P^*) \tau_\perp
 \end{equation}
 
-The de Gosson quantum of action, representing the minimum symplectic capacity of a phase-space ``blob,'' is defined by the area of an ellipse with conjugate diameters $\Delta q$ and $\Delta p$:
+\begin{equation}
+C(Q^*, P^*) \cong \ell(s^*_Q, s^*_P) = |s^*_Q| + |s^*_P|
+\end{equation}
+
+\subsection{Erasure and Symplectic Action}
+The action of erasure scales with the coordinate deviations from the target macrostate microstates:
+\begin{equation}
+    A_{\mathrm{erase}} = \frac{\pi}{4} q_0 p_0 |q_?-Q^*||p_? - P^*|
+\end{equation}
+Following de Gosson's geometric boundary \cite{deGosson2013}, the total symplectic quantum of action is:
+\begin{equation}
+    A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar
+\end{equation}
+The hierarchy of action within the quantum of action is thus constrained by:
+\begin{equation}
+    A_L \le A_{\mathrm{erase}} \le A_{d\Gamma}
+\end{equation}
+
+\subsection{Orthogonality Time and Information Limits}
+Utilizing the Margolus-Levitin theorem for the orthogonality time $\tau_\perp$ at the thermal energy $E = k_B T \ln(2)$:
+\begin{equation}
+    \tau_\perp T = \frac{\pi \hbar}{2 \ln(2) k_B}, \quad \tau_\perp \le \frac{h}{4E}
+\end{equation}
+Applying the Bekenstein bound for the information capacity $I$ of the quantum of action, where $R = c \tau_\perp$:
+\begin{equation}
+    I \le \frac{2 \pi k_B R E}{\hbar c} = \frac{2 \pi k_B}{\hbar c} \left( c \frac{\pi \hbar}{2 \ln(2) k_B} \right) (k_B T \ln(2)) = \pi^2 \text{ bits}
+\end{equation}
+For the conjugate action quanta pair, the total bit-capacity $I_{\text{total}}$ is bounded by:
+\begin{equation}
+    I_{\text{total}} = I_Q + I_P \le 2 \pi^2 \text{ bits}
+\end{equation}
+
+The characteristic action is defined as $A_0 = q_0 p_0 = \hbar$. The de Gosson quantum of action, representing the minimum symplectic capacity of a phase-space ``blob,'' is:
 \begin{equation}
     A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar.
 \end{equation}
-
-For a system with macroscopic semi-axes $\mathcal{Q}$ and $\mathcal{P}$, the total system action $A_\Gamma$ is the sum of these elementary quanta. Given that the system is defined by a conjugate pair of action-volumes, we account for both degrees of freedom in the counting logic:
+For a system with macroscopic semi-axes $\mathcal{Q}$ and $\mathcal{P}$, the total system action $A_\Gamma$ is:
 \begin{equation}
     A_\Gamma = \sum A_{d\Gamma} = \pi \hbar \mathcal{Q} \mathcal{P} \ge \pi \hbar.
 \end{equation}
+The total available microstate capacity, or counting logic of the system, is thus $N_\Gamma = 2 \mathcal{Q}\mathcal{P}$. For a macroscopic system, $N_\Gamma \gg 1$, whereas the ground state is reached at the bifurcation limit $N_\Gamma = 2$, representing the irreducible conjugate pair.
 
-The total available microstate capacity, or counting logic of the system, is thus:
-\begin{equation}
-    N_\Gamma = 2 \mathcal{Q}\mathcal{P}.
-\end{equation}
-For a macroscopic system, $N_\Gamma \gg 1$, whereas the ground state is reached at the bifurcation limit $N_\Gamma = 2$, representing the irreducible conjugate pair.
 \section{The Thermodynamic Necessity of Conjugate Action Quanta}
 
 \begin{figure}[htbp]
@@ -885,6 +839,45 @@ The algorithm utilizes a \textbf{Cumulative Sum (CUSUM)} integrator to track net
 
 \subsection*{4. Bimodal Trough Unification}
 In bimodal regimes, outward scans ($0 \to \pm \infty$) may identify the symmetric "shores" of a central valley. A geometric unification step evaluates the origin ($x \approx 0$); if the origin represents a local minimum relative to the innermost detected nodes, the algorithm collapses the symmetric pair into a single central node. This resolves the \textbf{Ambiguity of Origin} and provides an accurate count of the underlying momentum eigenstates.
+
+
+\section{Information-Theoretic Action and the Isomorphic Identity}
+
+The Landauer action associated with the resolution of a conjugate pair $(Q^*, P^*)$ is governed by the total bit-length of their identifying strings. To quantify this, we define the \textit{Algorithmic Information Content} (or \textit{Structural Complexity}) $C(Q^*, P^*)$, which we take to be isomorphically equivalent to the prefix-free length $\ell$ of the unique binary sequences $s_q^*$ and $s_p^*$:
+
+\begin{equation}
+    C(Q^*, P^*) \cong \ell(s_q^*, s_p^*) = |s_q^*| + |s_p^*|
+\end{equation}
+
+In this framework, the Landauer action $A_L$ is expressed as:
+\begin{equation}
+    A_L = k_B T \ln(2) \, C(Q^*, P^*)
+\end{equation}
+
+Our choice of $C(\cdot)$ over the standard Kolmogorov complexity $K(\cdot)$ is motivated by our requirement that the program be the sequence itself (identity-based decoding). Under this constraint, irrational values (e.g., the Golden Ratio $\phi$) possess an infinite prefix length $\ell \to \infty$, as no finite prefix uniquely localizes the state in the binary sequence tree. Conversely, rational values resolve to finite identities within the operational bound $A_{\texttt{erase}}$.
+
+This isomorphism maps the \textit{Symplectic Capacity} of de Gosson's quantum blobs \cite{deGosson2013} onto the \textit{Information Capacity} of the address space. By utilizing $C(\cdot)$, we maintain a bit-based measure that reflects the "difficulty of creation" akin to Bennett's Logical Depth \cite{Bennett1988}, but measured as the physical cost of resolution in a non-compressing memory architecture \cite{Chaitin1975}.
+
+\subsection{The Chaitin Isomorphism: Program Size as Identity}
+The foundation of our $C(Q^*, P^*) \cong \ell(s^*)$ isomorphism rests on Chaitin’s proof that algorithmic complexity is formally identical to information theory when utilizing prefix-free sets \cite{Chaitin1975}. Chaitin establishes that the complexity of a specific object is the length of its shortest description; in our identity-based architecture, where the "program" cannot be compressed into a rule, the description is the sequence itself. This justifies our use of $\ell$ as a measure of the state's intrinsic information content. Crucially, Chaitin’s framework allows for infinite complexity in the case of non-computable or non-terminating sequences, providing the necessary mathematical basis for the infinite bit-length of irrationals in our model.
+
+\subsection{Bennett’s Logical Depth: From Time to Informational Path}
+While Bennett’s \textit{Logical Depth} is traditionally measured in the time required for a program to reconstruct an object \cite{Bennett1988}, it serves as the conceptual precursor to our measure $C()$. Bennett defines complexity not by mere randomness (entropy), but by the "difficulty of creation." In our system, this "difficulty" is translated from the time domain into the spatial-informational domain: the depth of the binary sequence tree. By citing Bennett, we justify that $C()$ is not merely Shannon entropy, but a measure of the structural "organizational work" required to resolve a microstate. This bridge allows us to maintain a "depth" interpretation while strictly adhering to units of bits for the Landauer action.
+
+\subsection{Gell-Mann and Lloyd: Effective Complexity and Total Information}
+Gell-Mann and Lloyd provide the "off-the-shelf" justification for using the symbol $C$ to represent \textit{Effective Complexity} \cite{GellMann1996}. Their work distinguishes between the total information (which includes random noise) and the structured information (regularities). In our model, $C(Q^*, P^*)$ represents the "Total Information" required to uniquely identify a microstate in an environment where no "regularities" (shortcuts) are permitted by the decoder $\mathcal{U}_{\texttt{erase}}$. This ensures that our bit-count is "Effective" in the sense that every bit in $s^*$ is necessary for the identification of the state, preventing the Golden Ratio from being collapsed into a terse formula and maintaining its infinite complexity.
+
+
+\begin{thebibliography}{9}
+\bibitem{deGosson2013} 
+M. de Gosson, \textit{The Symplectic Camel and the Uncertainty Principle}, Foundations of Physics \textbf{43}, 440--454 (2013).
+\bibitem{Chaitin1975} 
+G. J. Chaitin, \textit{A Theory of Program Size Formally Identical to Information Theory}, J. ACM \textbf{22}, 329--340 (1975).
+\bibitem{Bennett1988} 
+C. H. Bennett, \textit{Logical Depth and Physical Complexity}, in The Universal Turing Machine: A Half-Century Survey (1988).
+\bibitem{GellMann1996} 
+M. Gell-Mann and S. Lloyd, \textit{Information Measures, Effective Complexity, and Total Information}, Complexity \textbf{2}, 44--52 (1996).
+\end{thebibliography}
 
 
 \end{document}
