@@ -54,11 +54,89 @@ By maximizing entropy through Landauer information erasure inside de Gosson's qu
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-    \caption{\textbf{Information erasure inside the quantum of action} (schematic in normalized units $\mu_q=q_0 q_?$, $q=q_0\mathbf{Q_0}$, $\Delta p= 2p_0\mathcal{P}$, $\Delta q = 2q_0/\mathcal{P}$). Within the symplectic quantum of action defined by $A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar$, the operationally indistinguishable coordinate microstates $\{q_?\}$ encoded as binary sequences $\{s_?\}$ (e.g., \texttt{11010101}) and bounded by the conjugate momentum $\pm 1/\mathcal{P}$ are irreversibly erased by thermodynamic necessity. The indistinguishable microstates are collapsed to the macrostate $\mathbf{Q_0}\colon |q_? - \mathbf{Q_0}| = |\delta_q| \le \Delta q$ encoded as the minimal binary sequence $\mathbf{s_0}$ (e.g., \texttt{1101}) of length $K(\mathbf{Q_0}) = |\mathbf{s_0}|$. This erasure over a characteristic time $\tau_L$ requires an action $A_{\mathrm{L}} = \frac{\pi}{4} |\delta_q| \Delta p$ constrained from below by Landauer's thermodynamic principle and from above by de Gosson's geometric boundary $K(\mathbf{Q_0}, \mathbf{P_0}) \ln(2) k_{B} T \tau_L \le A_L \le \pi \hbar$.}
+    \caption{\textbf{Information erasure inside the quantum of action} (schematic in normalized units $\mu_q=q_0 q_?$, $q=q_0\mathbf{Q_0}$, $\Delta p= 2p_0\mathcal{P}$, $\Delta q = 2q_0/\mathcal{P}$). Within the symplectic quantum of action defined by \(A_{d\Gamma }=\frac{\pi }{4}\Delta q\Delta p=\pi \hbar \), the binary sequences \(\{s_{?}\}\) (e.g., \texttt{11010101})—which represent informationally distinct but operationally indistinguishable coordinate microstates \(\{q_{?}\}\)—are irreversibly erased. While the underlying physical microstates are bounded by the conjugate momentum \(\pm 1/\mathcal{P}\) and collapse into the macrostate \(\mathbf{Q}^{\mathbf{*}}\) defined by the uncertainty \(|q_{?}-\mathbf{Q}^{\mathbf{*}}|=|\delta _{q}|\le \Delta q\), the Landauer erasure specifically acts upon the information. This process truncates the high-resolution sequences \(\{s_{?}\}\) to the minimal binary sequence \(\mathbf{s}^{\mathbf{*}}\) (e.g., \texttt{1101}) of length \(K(\mathbf{Q}^{\mathbf{*}})=|\mathbf{s}^{\mathbf{*}}|\), establishing that the information resolution is fundamentally bounded by the symplectic action \(\pi \hbar\). Consequently, the conversion of lost computational degrees of freedom into thermal entropy over the orthogonality time \(\tau_{\perp }\) defines the Landauer action \(A_L = K(\mathbf{Q}^{\mathbf{*}},\mathbf{P}^{\mathbf{*}})\ln (2)k_{B}T\tau_\perp\) and requires an erasure action \(A_{\operatorname{erase}}=\frac{\pi }{4}|\delta _{q}|\Delta p\), which is bounded from below by the Landauer action and from above by de Gosson's geometric boundary: \(A_L \le A_{\operatorname{erase}}\le \pi \hbar \).}
+
+
 \label{fig:erase}
 \end{figure}
 
 \section{Overview}
+
+Landauer Action
+
+$$
+A_L = k_B T \ln(2) K(Q^*, P^*) \tau_\perp, \quad K(Q^*, P^*) = |s^*_Q| + |s^*_P|
+$$
+
+Action of Erasure
+
+$$
+A_{\operatorname{erase}} = \frac{\pi}{4} q_0 p_0 |q_?-Q^*||p_? - P^*|
+$$
+
+
+De Gosson's Quantum of Action
+
+$$
+A_{d\Gamma} = \frac{\pi}{4} \Delta q \Delta p = \pi \hbar
+$$
+
+Erasure with the Quantum of Action
+
+$$
+A_L \le A_{\operatorname{erase}} \le A_{d\Gamma}
+$$
+
+Margolus-Levitin Orthogonality Time
+
+$$
+\tau_\perp T = \frac{\pi \hbar}{2 \ln(2) k_B}
+$$
+
+$$
+\tau_\perp \le \frac{h}{4E}, \quad E = k_B T \ln(2)
+$$
+
+Bekenstein Bound for Quantum of Action
+
+$$
+S \le \frac{2 \pi k_B R E}{\hbar c}
+$$
+
+$$
+R = c \tau_\perp = c \frac{\pi \hbar}{2 \ln(2) k_B}
+$$
+
+$$
+E =  k_B T \ln(2)
+$$
+
+$$
+S \le \frac{2 \pi k_B}{\hbar c} c \frac{\pi \hbar}{2 \ln(2) k_B}  k_B T \ln(2) = \pi ^2 \ \text{bits}
+$$
+
+Bekenstein Bound for Conjugate Action Quanta Pair
+
+$$
+S = S_Q + S_P = 2 \pi^2
+$$
+
+$$
+S \le \frac{2 \pi k_B R E}{\hbar c}
+$$
+
+$$
+R = c \tau_\perp = c \frac{\pi \hbar}{2 \ln(2) k_B}
+$$
+
+$$
+E =  k_B T \ln(2)
+$$
+
+$$
+S \le \frac{2 \pi k_B}{\hbar c} c \frac{\pi \hbar}{2 \ln(2) k_B}  k_B T \ln(2) = \pi ^2 \ \text{bits}
+$$
+
 
 The characteristic action (facilitating dimensionless, normalized units) is defined as 
 \begin{equation}
@@ -788,5 +866,24 @@ $A_L = \frac{\pi}{4} \Delta q \Delta p \le \pi \hbar$
 In our computational model, the optimal encoder \(\mathrm{Enc}_{0}\) is implemented as a traversal of the Stern-Brocot tree \(\mathrm{SB}\). Given the microstate \(q_{?}\) and the boundary \(\mathcal{P}\), the encoder identifies the unique binary path \(\mathbf{s}_{\mathbf{0}}\) that minimizes the algorithmic complexity \(K(\mathbf{Q}_{\mathbf{0}})\) while satisfying the symplectic constraints.
 
 $$\mathrm{Enc}_0(q_?, \mathcal{P}) = \operatorname{SB}(\mathbf{Q_0}) \mapsto \mathbf{s_0}$$
+
+\section*{Node Detection Methodology: Adaptive Gabor-Limited CUSUM Analysis}
+
+The automated counting of nodes in the momentum histograms is performed using a multi-staged signal processing pipeline. This methodology integrates information theory, statistical mechanics, and digital logic to ensure robust detection across varying energy regimes without the use of arbitrary absolute parameters.
+
+\subsection*{1. Gabor-Heisenberg Information Limit}
+All thresholds within the detection algorithm are anchored to the \textbf{Gabor Linear Uncertainty Limit}, defined by the constant $\frac{1}{4\pi}$. This serves as the fundamental information-theoretic floor for distinguishing physical transitions from stochastic noise. A significance filter first evaluates the signal-to-noise ratio (SNR): if the peak-to-trough range ($H_{\text{range}}$) is less than $\frac{1}{4\pi}$ of the mean bin height ($H_{\text{avg}}$), the distribution is classified as a uniform vacuum state (\textit{NA}).
+
+\subsection*{2. Moment-Based Adaptive Scaling}
+To maintain constant sensitivity across the Quantum Harmonic Oscillator (QHO) spectrum, the detection threshold is dynamically scaled by the system's second moment. We calculate the weighted positional standard deviation ($\sigma$) of the probability density:
+\[ \sigma = \sqrt{\frac{\sum y_i(x_i - \bar{x})^2}{\sum y_i}} \]
+The threshold adapts as $\theta = \frac{1/4\pi}{1 + \sqrt{\sigma}}$. This \textbf{Moment-Based Adaptive Filtering} ensures that as the wave packet broadens at high energy levels (where peaks are shallower relative to the floor), the detector increases sensitivity to capture the finer ripples.
+
+\subsection*{3. Symmetrical Schmitt Trigger Hysteresis}
+The algorithm utilizes a \textbf{Cumulative Sum (CUSUM)} integrator to track net local changes. To eliminate noise-induced chatter, the detector implements a digital \textbf{Schmitt Trigger}. A node is only recorded once the cumulative net rise exceeds $\theta$. Following a detection, the state machine is "locked" and will not re-arm until a symmetric cumulative fall of $-\theta$ is observed. This hysteresis ensures that monotonic climbs with minor binning jitter are treated as single continuous transitions.
+
+\subsection*{4. Bimodal Trough Unification}
+In bimodal regimes, outward scans ($0 \to \pm \infty$) may identify the symmetric "shores" of a central valley. A geometric unification step evaluates the origin ($x \approx 0$); if the origin represents a local minimum relative to the innermost detected nodes, the algorithm collapses the symmetric pair into a single central node. This resolves the \textbf{Ambiguity of Origin} and provides an accurate count of the underlying momentum eigenstates.
+
 
 \end{document}
