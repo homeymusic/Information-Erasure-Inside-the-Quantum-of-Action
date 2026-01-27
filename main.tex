@@ -62,23 +62,56 @@ We propose a fundamental limit relating information energy to the quantum of act
 \label{eq:InfoActionLimit}
 b E \tau \le \pi \hbar ,
 \end{equation}
-where $b = |s^*|$ is the binary sequence length of the phase space coordinates, $E = k_B T \ln 2$ is the Landauer erasure energy, and $\tau$ is the characteristic time required to flip a single binary value to its orthogonal state.
+where $b = |s^*|$ is the length of the binary encoding of the phase-space coordinates, $E = k_B T \ln 2$ is the Landauer erasure energy, and $\tau$ is the characteristic time required to flip a single binary value to its orthogonal state. Here $\pi \hbar = \frac{\pi}{4} \Delta q \Delta p$ is the quantum of action, the minimal elliptical phase-space area of finite support; unlike statistical variance $\sigma_q \sigma_p$, these dimensions $\Delta q$ and $\Delta p$ define the hard Heisenberg boundaries where states are operationally indistinguishable.
 
 \paragraph{Referencing Example:}
 The information-action limit is captured by the inequality in Eq.~(\ref{eq:InfoActionLimit}).
 
 
-\section{Foundational Manuscripts}
-\begin{itemize}
-    \item Landauer \cite{Landauer1961}
-    \item de Gosson \cite{DeGosson2003}
-    \item Heisenberg \cite{Heisenberg1927}
-    \item Stern \cite{Stern1858}
-    \item Brocot \cite{Brocot1861}
-    \item Stolzenburg \cite{Stolzenburg2015}
-    \item Plenio and Vitelli \cite{PlenioVitelli2001}
-\end{itemize}
+\subsection{Information Erasure Inside the Quantum of Action}
 
+Information erasure is the physical convergence of operationally indistinguishable phase-space micro states ($q_{?}, p_{?}$) toward the reset macro states ($\mathbf{Q}^*, \mathbf{P}^*$). This collapse is structurally constrained by the system's fundamental scales, where dimensionless fluctuations are bounded by the reciprocal of the maximal extent in the conjugate dimension:
+\begin{equation}
+\label{eq:SymplecticBounds}
+|q_? - \mathbf{Q}^*| \le \mathcal{P}^{-1}, 
+\quad 
+|p_? - \mathbf{P}^*| \le \mathcal{Q}^{-1}
+\end{equation}
+Scale factors $q_0$ and $p_0$ define the physical position and momentum for both micro ($\mu_q, \mu_p$) and macro ($q, p$) states:
+\begin{align}
+\mu_q &\coloneqq q_0 q_? \quad \text{and} \quad \mu_p \coloneqq p_0 p_? \\
+q &\coloneqq q_0 \mathbf{Q}^* \quad \text{and} \quad p \coloneqq p_0 \mathbf{P}^*
+\end{align}
+Here, $\mathcal{Q}$ and $\mathcal{P}$ represent the normalized maximal extent and maximal momentum of the system. These parameters define the \textbf{symplectic conjugate squeeze}: surplus bits in the encoding of $(q_?, p_?)$ not supported by the limited capacity of the Heisenberg cell $(\mathcal{P}^{-1}, \mathcal{Q}^{-1})$ are erased and collapse to $(\mathbf{Q}^*, \mathbf{P}^*)$. This reciprocal coupling ensures the elliptical area of the quantum of action remains invariant, preserving the fundamental action regardless of the specific Hamiltonian configuration.
+
+\paragraph{Referencing Example:}
+The symplectic squeezing is captured by Eq.~(\ref{eq:SymplecticBounds}).
+
+\section{Foundational Manuscripts}
+
+\begin{itemize}
+    \item \textbf{Geometry}
+    \begin{itemize}
+        \item Heisenberg \cite{Heisenberg1927}
+        \item de Gosson \cite{DeGosson2003}
+    \end{itemize}
+    
+    \item \textbf{Thermodynamics}
+    \begin{itemize}
+        \item Landauer \cite{Landauer1961}
+        \item Plenio and Vitelli \cite{PlenioVitelli2001}
+        \item Margolus and Levitin \cite{MargolusLevitin1998}
+    \end{itemize}
+    
+    \item \textbf{Methodology}
+    \begin{itemize}
+        \item Stern \cite{Stern1858}
+        \item Brocot \cite{Brocot1861}
+        \item Graham, Knuth, and Patashnik \cite{ConcreteMath}
+        \item Stolzenburg \cite{Stolzenburg2015}
+        \item Aiylam \cite{Aiylam2013}
+    \end{itemize}
+\end{itemize}
 
 \bibliography{main} 
 \end{document}
